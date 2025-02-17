@@ -1,0 +1,14 @@
+/* グローバルスタイル */
+
+/* 全ての不要なスタイルを削除 */
+.header-contact {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.footer-tel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+} 
