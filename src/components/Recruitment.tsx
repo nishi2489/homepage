@@ -38,7 +38,7 @@ const Recruitment = () => {
           className="bg-white p-8 rounded-lg shadow-sm mb-8"
         >
           <h3 className="text-2xl font-bold mb-6 text-gray-800">
-            昭栄が自信を持ってお勧めする３項目
+            昭栄が自信を持ってお勧めする３項目。。
           </h3>
           <div className="grid gap-6 md:grid-cols-3">
             {recommendations.map((item, index) => (
