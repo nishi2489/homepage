@@ -29,10 +29,23 @@ const WorkFlow = () => {
     <div className="flex justify-center">
       <div className="bg-gray-600 py-12 w-[800px]">
         <div className="max-w-4xl mx-auto px-4">
-          <h3 className="text-center text-2xl font-bold mb-12 text-white">作業の流れ</h3>
+          <motion.h3 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center text-2xl font-bold mb-12 text-white"
+          >
+            作業の流れ
+          </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {steps.map((step, index) => (
-              <div key={index} className="relative">
+              <motion.div 
+                key={index} 
+                className="relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
                 <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all">
                   <div className="flex flex-col items-center">
                     <div className="w-20 h-20 rounded-full bg-black/50 flex items-center justify-center mx-auto mb-4 group-hover:bg-yellow-400/20 transition-colors">
@@ -45,11 +58,16 @@ const WorkFlow = () => {
                   </div>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute -right-3 top-1/2 transform -translate-y-1/2 z-10">
+                  <motion.div 
+                    className="hidden md:block absolute -right-3 top-1/2 transform -translate-y-1/2 z-10"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+                  >
                     <ArrowRight className="w-6 h-6 text-yellow-400" />
-                  </div>
+                  </motion.div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
