@@ -1,53 +1,23 @@
-import { Phone, CircuitBoard, Shield, Clock, Zap } from "lucide-react";
+import { CircuitBoard, Shield, Zap } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  
-  const images = [
-    '/images/hero1.jpg',
-    '/images/hero2.jpg',
-    '/images/hero3.jpg'
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 10000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="relative min-h-screen text-white">
-      {/* Background Image Carousel */}
+      {/* Background Image */}
       <div className="fixed inset-0 w-full h-full z-0">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-              currentSlide === index ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{
-              backgroundImage: `url('${image}')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundAttachment: 'fixed',
-              filter: 'contrast(120%) brightness(80%)'
-            }}
-          />
-        ))}
+        <div
+          className="absolute inset-0 w-full h-full"
+          style={{
+            backgroundImage: "url('/images/company-building.jpg')", // 会社情報で使用している建物の写真のパスに変更
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            filter: 'brightness(80%)'
+          }}
+        />
       </div>
 
-      <div 
-        className="fixed inset-0 z-5"
-        style={{
-          background: 'radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.5) 100%)',
-          mixBlendMode: 'overlay'
-        }}
-      />
-      
       {/* Gradient Overlay */}
       <div 
         className="fixed inset-0 z-10 bg-gradient-to-b from-black/50 via-black/40 to-black/50"

@@ -54,6 +54,52 @@ const Recruitment = () => {
             ))}
           </div>
         </motion.section>
+
+        {/* メイン事業の紹介 */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-white p-8 rounded-lg shadow-sm mb-8"
+        >
+          <div className="flex items-center justify-center">
+            <span className="inline-block bg-yellow-400 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+              メイン事業
+            </span>
+          </div>
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">計器工事</h3>
+            <p className="text-gray-600 mb-4">
+              一般家庭に設置されている電力量計を計量法に基づき10年に1度の周期で交換する業務です。
+              当社は、電力会社から業務委託を受けて電力量計の交換工事を実施しております。
+            </p>
+            <a 
+              href="https://shoeinet.com/business/keiki/index.php"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-yellow-600 font-medium hover:text-yellow-700"
+            >
+              詳しく見る →
+            </a>
+          </div>
+        </motion.section>
+
+        {/* 採用情報へのリンクボタン */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-center"
+        >
+          <a
+            href="https://www.shoei-k.co.jp/recruit/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-200"
+          >
+            採用情報の詳細はこちら
+          </a>
+        </motion.div>
       </div>
     </div>
   );

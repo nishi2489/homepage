@@ -4,7 +4,6 @@ import Services from "../components/Services";
 import About from "../components/About";
 import Footer from "../components/Footer";
 import TabsContainer from "../components/TabsContent";
-import WorkFlow from "../components/WorkFlow";
 
 const Index = () => {
   return (
@@ -13,7 +12,6 @@ const Index = () => {
       <Hero />
       <div className="bg-white relative z-10">
         <TabsContainer />
-        <WorkFlow />
         <Services />
         <About />
         <Footer />
