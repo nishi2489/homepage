@@ -12,7 +12,28 @@ const Service = () => {
         >
           サービス
         </motion.h2>
-        {/* サービスの内容をここに追加 */}
+        
+        <p className="text-center text-gray-600 mb-8">
+          お客様のニーズに合わせた包括的なサービスを提供します
+        </p>
+
+        {/* サービス画像セクション */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="overflow-hidden rounded-lg">
+            <img
+              src="/images/item.jpg"
+              alt="電気設備サービス"
+              className="w-full h-64 object-cover"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg">
+            <img
+              src="/images/saku.jpg"
+              alt="システムサービス"
+              className="w-full h-64 object-cover"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

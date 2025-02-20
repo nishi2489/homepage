@@ -1,12 +1,22 @@
-import Recruitment from "@/components/Recruitment"; // Achievement から変更
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
 
-const routes = [
-  {
-    path: "/",
-    element: <Service />
-  },
-  {
-    path: "/recruitment", // /achievement から変更
-    element: <Recruitment /> // Achievement から変更
-  }
-]; 
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "昭栄エンジニアサービス",
+  description: "電気計器工事のスペシャリスト",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="ja">
+      <body className={inter.className}>{children}</body>
+    </html>
+  );
+} 

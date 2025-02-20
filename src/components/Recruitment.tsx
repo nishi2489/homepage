@@ -30,6 +30,20 @@ const Recruitment = () => {
           採用情報
         </motion.h2>
 
+        {/* 会社イメージ画像 */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-12"
+        >
+          <img
+            src="/images/company-image.jpg"
+            alt="昭栄電気工業の会社イメージ"
+            className="w-full h-auto rounded-lg shadow-lg"
+          />
+        </motion.div>
+
         {/* 3つの特徴 */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}

@@ -14,7 +14,7 @@ const About = () => {
         {/* 会社画像 */}
         <div className="w-full h-48 mb-8 overflow-hidden rounded-lg">
           <img
-            src="/images/company.jpg"
+            src="/images/company-image.jpg"
             alt="会社外観"
             className="w-full h-full object-cover"
           />

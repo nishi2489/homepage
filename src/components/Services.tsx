@@ -24,7 +24,7 @@ const ServiceCard = ({ icon: Icon, title, description, items, bgImage }) => {
         </ul>
       </div>
       <div 
-        className="absolute inset-0 opacity-10 rounded-lg"
+        className="absolute inset-0 opacity-10"
         style={{
           backgroundImage: `url('${bgImage}')`,
           backgroundSize: 'cover',
@@ -36,6 +36,57 @@ const ServiceCard = ({ icon: Icon, title, description, items, bgImage }) => {
 };
 
 const Services = () => {
+  const services = [
+    {
+      icon: Shield,
+      title: "定期調査",
+      description: "電気事業法に基づき、4年に1度（定期調査）または1年に1度（特定調査）の法定点検を実施します",
+      items: [
+        "電力量計付近での漏電検査実施",
+        "分電盤の外観・内部点検実施",
+        "必要に応じた絶縁測定の実施",
+        "電気設備の安全相談対応"
+      ],
+      bgImage: "/images/teiki.jpg"
+    },
+    {
+      icon: Wrench,
+      title: "フィールド作業",
+      description: "お客様の引越しや契約変更に伴う電気設備の接続・切断作業を行います",
+      items: [
+        "電気の使用開始・停止時の接続作業",
+        "電力量計・契約ブレーカーの交換",
+        "電線の接続・切断作業",
+        "事前の現場確認実施"
+      ],
+      bgImage: "/images/idou.jpg"
+    },
+    {
+      icon: ClipboardCheck,
+      title: "竣工調査",
+      description: "電気事業法に基づく法定点検で、新築時や電気設備の変更時に実施します",
+      items: [
+        "配線・電気設備の目視点検",
+        "絶縁抵抗測定の実施",
+        "電圧測定の実施",
+        "接地抵抗測定の実施"
+      ],
+      bgImage: "/images/shunkou.jpg"
+    },
+    {
+      icon: Flame,
+      title: "ガス調査サービス",
+      description: "お客様の安全を確保するため、専門的な視点でガス設備の点検を実施します",
+      items: [
+        "ガス漏れ調査の実施",
+        "ガス機器の点火試験",
+        "設置状況と使用環境の確認",
+        "安全装置付き機器への交換提案"
+      ],
+      bgImage: "/images/gas.jpg"
+    }
+  ];
+
   return (
     <section id="services" className="py-16">
       <div className="container-width">
@@ -83,6 +134,14 @@ const Services = () => {
                 </li>
               </ul>
             </div>
+            <div 
+              className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage: `url('/images/souko.jpg')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
           </div>
         </div>
 
@@ -95,129 +154,9 @@ const Services = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* 定期調査 */}
-            <div className="relative bg-white rounded-lg shadow-lg p-8 overflow-hidden">
-              <div className="flex items-start gap-4">
-                <Shield className="w-8 h-8 text-gray-600" />
-                <div>
-                  <h3 className="text-xl font-bold mb-2">定期調査</h3>
-                  <p className="text-sm text-gray-600 mb-4">
-                    電気事業法に基づき、4年に1度（定期調査）または1年に1度（特定調査）の法定点検を実施します
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-3 bg-gray-300 mt-1.5" />
-                      <span>電力量計付近での漏電検査実施</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-3 bg-gray-300 mt-1.5" />
-                      <span>分電盤の外観・内部点検実施</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-3 bg-gray-300 mt-1.5" />
-                      <span>必要に応じた絶縁測定の実施</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-3 bg-gray-300 mt-1.5" />
-                      <span>電気設備の安全相談対応</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* フィールド作業 */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="flex items-start gap-4">
-                <Wrench className="w-8 h-8 text-gray-600" />
-                <div>
-                  <h3 className="text-xl font-bold mb-2">フィールド作業</h3>
-                  <p className="text-sm text-gray-600 mb-4">
-                    お客様の引越しや契約変更に伴う電気設備の接続・切断作業を行います
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>電気の使用開始・停止時の接続作業</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>電力量計・契約ブレーカーの交換</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>電線の接続・切断作業</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>事前の現場確認実施</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* 竣工調査 */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="flex items-start gap-4">
-                <ClipboardCheck className="w-8 h-8 text-gray-600" />
-                <div>
-                  <h3 className="text-xl font-bold mb-2">竣工調査</h3>
-                  <p className="text-sm text-gray-600 mb-4">
-                    電気事業法に基づく法定点検で、新築時や電気設備の変更時に実施します
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>配線・電気設備の目視点検</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>絶縁抵抗測定の実施</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>電圧測定の実施</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>接地抵抗測定の実施</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* ガス調査サービス */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="flex items-start gap-4">
-                <Flame className="w-8 h-8 text-gray-600" />
-                <div>
-                  <h3 className="text-xl font-bold mb-2">ガス調査サービス</h3>
-                  <p className="text-sm text-gray-600 mb-4">
-                    お客様の安全を確保するため、専門的な視点でガス設備の点検を実施します
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>ガス漏れ調査の実施</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>ガス機器の点火試験</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>設置状況と使用環境の確認</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1 h-4 bg-gray-300 mt-1" />
-                      <span>安全装置付き機器への交換提案</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
           </div>
         </div>
       </div>

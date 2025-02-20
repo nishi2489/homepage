@@ -1,79 +1,48 @@
-import { CircuitBoard, Shield, Zap } from "lucide-react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = ['/images/hero1.jpg', '/images/hero2.jpg', '/images/hero3.jpg'];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 5000); // 5秒ごとに切り替え
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="relative min-h-screen text-white">
-      {/* Background Image */}
-      <div className="fixed inset-0 w-full h-full z-0">
-        <div
-          className="absolute inset-0 w-full h-full"
+    <div className="relative h-screen">
+      {images.map((image, index) => (
+        <div 
+          key={image}
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
           style={{
-            backgroundImage: "url('/images/company-building.jpg')", // 会社情報で使用している建物の写真のパスに変更
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
-            filter: 'brightness(80%)'
+            backgroundImage: `url(${image})`,
+            opacity: currentImageIndex === index ? 1 : 0,
+            filter: "brightness(0.5)"
           }}
         />
-      </div>
-
-      {/* Gradient Overlay */}
-      <div 
-        className="fixed inset-0 z-10 bg-gradient-to-b from-black/50 via-black/40 to-black/50"
-      />
-
-      <div className="container-width px-4 sm:px-6 lg:px-8 relative z-20 pt-[160px] pb-16">
-        <div className="text-center max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
-            <h1 className="inline-flex flex-col writing-vertical-rl text-4xl sm:text-6xl font-bold mb-6 leading-tight text-white mx-auto">
-              <span className="mb-2">計器工事の</span>
-              <span className="mb-2">プロフェッショナル</span>
-              <span>安全第一。</span>
-            </h1>
-            <p className="text-xl sm:text-2xl mb-12 text-white/80">
-              電気計器工事のスペシャリストとして、<br className="hidden sm:block" />
-              確かな技術と信頼をお届けします
-            </p>
-          </motion.div>
+      ))}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative h-full flex items-center justify-center text-white text-center z-10"
+      >
+        <div className="p-8 rounded-lg max-w-4xl">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 whitespace-pre-line">
+            計器工事の{'\n'}プロフェッショナル{'\n'}安全第一。
+          </h1>
+          <p className="text-xl md:text-2xl">
+            電気計器工事のスペシャリストとして、{'\n'}確かな技術と信頼をお届けします
+          </p>
         </div>
-
-        <div className="h-[120px]"></div>
-
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <div className="bg-black/30 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:border-white/30 transition-colors group">
-            <CircuitBoard className="w-12 h-12 mb-4 text-white group-hover:scale-110 transition-transform" />
-            <h3 className="text-xl font-bold mb-2 text-white">計器工事のプロ集団</h3>
-            <p className="text-white/80">
-              電力量計の交換から検査まで、確実な施工を提供します
-            </p>
-          </div>
-          <div className="bg-black/30 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:border-white/30 transition-colors group">
-            <Shield className="w-12 h-12 mb-4 text-white group-hover:scale-110 transition-transform" />
-            <h3 className="text-xl font-bold mb-2 text-white">安全性の追求</h3>
-            <p className="text-white/80">
-              徹底した安全管理体制で、安心の施工を実現します
-            </p>
-          </div>
-          <div className="bg-black/30 backdrop-blur-sm p-8 rounded-xl border border-white/20 hover:border-white/30 transition-colors group">
-            <Zap className="w-12 h-12 mb-4 text-white group-hover:scale-110 transition-transform" />
-            <h3 className="text-xl font-bold mb-2 text-white">グループ会社連携</h3>
-            <p className="text-white/80">
-              電気・ガス設備工事もグループ会社で対応可能です
-            </p>
-          </div>
-        </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };

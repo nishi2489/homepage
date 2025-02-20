@@ -15,12 +15,12 @@ export const ServicesTab = () => {
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <img
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475"
+              src="/images/saku.jpg"
               alt="電気設備サービス"
               className="w-full h-48 object-cover rounded-lg"
             />
             <img
-              src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+              src="/images/item.jpg"
               alt="電気設備サービス"
               className="w-full h-48 object-cover rounded-lg"
             />
