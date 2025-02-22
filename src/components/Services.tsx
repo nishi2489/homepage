@@ -109,7 +109,14 @@ const Services = () => {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
                 <Gauge className="text-yellow-400" size={28} />
-                <h3 className="text-xl font-bold">計器工事</h3>
+                <a 
+                  href="https://shoeinet.com/business/keiki/index.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl font-bold hover:text-blue-600 transition-colors"
+                >
+                  計器工事
+                </a>
               </div>
               <p className="text-sm text-gray-600 mb-4">
                 一般家庭に設置されている電力量計を計量法に基づき10年に1度の周期で交換する業務です。<br />

@@ -14,9 +14,11 @@ const Header = () => {
             </a>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-white hover:text-white/80 transition-colors">サービス</a>
-            <a href="#company" className="text-white hover:text-white/80 transition-colors">会社概要</a>
+          <div className="flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#services" className="text-white hover:text-white/80 transition-colors">サービス</a>
+              <a href="#recruit" className="text-white hover:text-white/80 transition-colors">採用情報</a>
+            </div>
             <div className="text-right">
               <p className="text-sm text-white/80">お問い合わせ</p>
               <p className="text-lg font-bold text-white">0120-356-362</p>
@@ -41,11 +43,11 @@ const Header = () => {
                 サービス
               </a>
               <a
-                href="#company"
+                href="#recruit"
                 className="block px-3 py-2 text-white hover:bg-white/10 transition-colors rounded-md"
                 onClick={() => setIsOpen(false)}
               >
-                会社概要
+                採用情報
               </a>
               <div className="px-3 py-2">
                 <p className="text-sm text-white/80">お問い合わせ</p>

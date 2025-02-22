@@ -93,7 +93,6 @@ const About = () => {
           </div>
 
           <div className="h-8"></div>
-
         </div>
       </div>
     </div>

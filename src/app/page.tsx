@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Company from "@/components/Company";
 import Service from "@/components/Service";
 import Recruitment from "@/components/Recruitment";
+import ServicesTab from "@/components/ServicesTab";
 
 export default function Home() {
   return (
@@ -17,6 +18,18 @@ export default function Home() {
         <div className="py-8">
           <Recruitment />
         </div>
+        <div className="service-section">
+          <a 
+            href="https://shoeinet.com/business/keiki/index.php"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center hover:text-blue-600 transition-colors"
+          >
+            <span className="text-yellow-400 mr-2">○</span>
+            計器工事
+          </a>
+        </div>
+        <ServicesTab />
       </div>
     </main>
   );
