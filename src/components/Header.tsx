@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Gauge } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,21 +10,32 @@ const Header = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <a href="#" className="flex flex-col">
-              <span className="text-2xl font-bold text-white">昭栄エンジニアサービス</span>
+              <span className="text-2xl font-bold text-white">
+                昭栄エンジニアサービス
+              </span>
             </a>
           </div>
-          
-          <div className="flex items-center space-x-8">
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#services" className="text-white hover:text-white/80 transition-colors">サービス</a>
-              <a href="#recruit" className="text-white hover:text-white/80 transition-colors">採用情報</a>
-            </div>
-            <div className="text-right">
-              <p className="text-sm text-white/80">お問い合わせ</p>
-              <p className="text-lg font-bold text-white">0120-356-362</p>
+
+          {/* PCナビ */}
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#services" className="text-white hover:text-white/80 transition-colors">
+              サービス
+            </a>
+            <a href="#recruit" className="text-white hover:text-white/80 transition-colors">
+              採用情報
+            </a>
+            {/* ▼ 電話番号を1行で表示するため、whitespace-nowrap を付ける */}
+            <div className="text-right whitespace-nowrap">
+              <p className="text-sm text-white/80 inline-block mr-2">
+                お問い合わせ
+              </p>
+              <p className="text-lg font-bold text-white inline-block">
+                0120-356-362
+              </p>
             </div>
           </div>
 
+          {/* スマホメニューアイコン */}
           <div className="md:hidden flex items-center">
             <button onClick={() => setIsOpen(!isOpen)} className="text-white">
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -32,6 +43,7 @@ const Header = () => {
           </div>
         </div>
 
+        {/* スマホドロワー */}
         {isOpen && (
           <div className="md:hidden">
             <div className="pt-2 pb-3 space-y-1">
@@ -49,9 +61,14 @@ const Header = () => {
               >
                 採用情報
               </a>
-              <div className="px-3 py-2">
-                <p className="text-sm text-white/80">お問い合わせ</p>
-                <p className="text-lg font-bold text-white">0120-356-362</p>
+              {/* ▼ スマホでも電話番号を1行に */}
+              <div className="px-3 py-2 whitespace-nowrap">
+                <p className="text-sm text-white/80 inline-block mr-2">
+                  お問い合わせ
+                </p>
+                <p className="text-lg font-bold text-white inline-block">
+                  0120-356-362
+                </p>
               </div>
             </div>
           </div>

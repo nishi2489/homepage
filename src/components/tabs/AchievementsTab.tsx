@@ -1,8 +1,10 @@
 import { Users } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
+import { HelpCircle } from "lucide-react";
 
 export const AchievementsTab = () => (
-  <div className="space-y-6 p-6">
+  <div className="space-y-8">
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
@@ -80,6 +82,29 @@ export const AchievementsTab = () => (
         </div>
       </CardContent>
     </Card>
+
+    <Link href="/services/meter-work" className="block">
+      <Card className="hover:bg-gray-50 transition-colors">
+        <CardContent className="space-y-4 pt-6">
+          <div className="flex items-center gap-2">
+            <HelpCircle className="h-6 w-6 text-primary" />
+            <h3 className="text-xl font-bold">計器工事</h3>
+          </div>
+          
+          <p className="text-gray-600">
+            一般家庭に設置されている電力量計を計量法に基づき10年に1度の周期で交換する業務です。
+            当社は、電力会社から業務委託を受けて電力量計の交換工事を実施しております。
+          </p>
+
+          <ul className="space-y-2 text-gray-600">
+            <li>停電なしでの電力量計交換作業</li>
+            <li>取外・取付計器の指針記録</li>
+            <li>取付計器の正常動作確認</li>
+            <li>必要に応じた停電対応の相談</li>
+          </ul>
+        </CardContent>
+      </Card>
+    </Link>
   </div>
 );
 

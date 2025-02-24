@@ -70,12 +70,7 @@ const About = () => {
           <div>
             <h3 className="text-lg font-semibold mb-2">事業内容</h3>
             <ul className="list-disc pl-5 space-y-1">
-              <li>
-                低圧計器工事業務
-                <p className="text-sm text-gray-600 mt-1 ml-2">
-                  一般家庭に設置されている電力量計を計量法に基づき10年に1度の周期で交換する業務です。当社は、電力会社から業務委託を受けて電力量計の交換工事を実施しております。
-                </p>
-              </li>
+              <li>低圧計器工事業務</li>
               <li>共架調査業務</li>
               <li>検査登録業務</li>
               <li>図面補正業務</li>
@@ -85,10 +80,14 @@ const About = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-2">主要取引先</h3>
+            <h3 className="text-lg font-semibold mb-2">主要取引先【グループ会社含む】</h3>
             <ul className="list-disc pl-5 space-y-1">
               <li>東京電力パワーグリッド株式会社</li>
+              <li>テプコ・ソリューション・アドバンス株式会社</li>
+              <li>セコム株式会社</li>
               <li>東電タウンプランニング株式会社</li>
+              <li>東京エナジーアライアンス株式会社</li>
+              <li>テプコホームテック株式会社</li>
             </ul>
           </div>
 

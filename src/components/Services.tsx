@@ -1,10 +1,15 @@
 import { CheckCircle2, Shield, Flame, Wrench, ClipboardCheck, Gauge } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import styles from "../styles/Services.module.css";
 
-const ServiceCard = ({ icon: Icon, title, description, items, bgImage }) => {
+const ServiceCard = ({ icon: Icon, title, description, items, bgImage, link }) => {
   return (
-    <motion.div 
-      className="relative bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+    <motion.a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative block bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow min-h-[300px]"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -23,15 +28,15 @@ const ServiceCard = ({ icon: Icon, title, description, items, bgImage }) => {
           ))}
         </ul>
       </div>
-      <div 
+      <div
         className="absolute inset-0 opacity-10"
         style={{
           backgroundImage: `url('${bgImage}')`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center'
         }}
       />
-    </motion.div>
+    </motion.a>
   );
 };
 
@@ -47,7 +52,8 @@ const Services = () => {
         "必要に応じた絶縁測定の実施",
         "電気設備の安全相談対応"
       ],
-      bgImage: "/images/teiki.jpg"
+      bgImage: "/images/teiki.jpg",
+      link: "https://shoeinet.com/business/electric-safety/index.php"
     },
     {
       icon: Wrench,
@@ -59,7 +65,8 @@ const Services = () => {
         "電線の接続・切断作業",
         "事前の現場確認実施"
       ],
-      bgImage: "/images/idou.jpg"
+      bgImage: "/images/idou.jpg",
+      link: "https://shoeinet.com/business/home-engineer/index.php"
     },
     {
       icon: ClipboardCheck,
@@ -71,7 +78,8 @@ const Services = () => {
         "電圧測定の実施",
         "接地抵抗測定の実施"
       ],
-      bgImage: "/images/shunkou.jpg"
+      bgImage: "/images/shunkou.jpg",
+      link: "https://shoeinet.com/business/electric-new/index.php"
     },
     {
       icon: Flame,
@@ -83,18 +91,22 @@ const Services = () => {
         "設置状況と使用環境の確認",
         "安全装置付き機器への交換提案"
       ],
-      bgImage: "/images/gas.jpg"
+      bgImage: "/images/gas.jpg",
+      link: "https://shoeinet.com/business/gas-engineer/index.php"
     }
   ];
 
   return (
     <section id="services" className="py-16">
       <div className="container-width">
-        <h2 className="text-center text-3xl font-bold mb-4">
+        {/* ★ ここを1行で収めたいので、whitespace-nowrap とスマホ用にフォントサイズ小さめ指定 */}
+        <h2 className="text-center font-bold mb-4 whitespace-nowrap text-base sm:text-lg md:text-3xl">
           安全を第一に考えたサービス
         </h2>
+
         <p className="text-center text-gray-600 mb-12">
-          お客様の大切な設備を守り、安心して使用いただけるよう、徹底した安全管理と確実な点検を提供しています
+          お客様の大切な設備を守り、安心して使用いただけるよう、<br className="hidden md:inline" />
+          徹底した安全管理と確実な点検を提供しています
         </p>
 
         {/* メイン事業 */}
@@ -105,18 +117,18 @@ const Services = () => {
             </span>
           </div>
 
-          <div className="relative bg-white rounded-lg shadow-lg p-8 overflow-hidden">
+          <a
+            href="https://shoeinet.com/business/keiki/index.php"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block bg-white rounded-lg shadow-lg p-8 overflow-hidden"
+          >
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
                 <Gauge className="text-yellow-400" size={28} />
-                <a 
-                  href="https://shoeinet.com/business/keiki/index.php"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xl font-bold hover:text-blue-600 transition-colors"
-                >
+                <div className="text-xl font-bold hover:text-blue-600 transition-colors">
                   計器工事
-                </a>
+                </div>
               </div>
               <p className="text-sm text-gray-600 mb-4">
                 一般家庭に設置されている電力量計を計量法に基づき10年に1度の周期で交換する業務です。<br />
@@ -141,15 +153,15 @@ const Services = () => {
                 </li>
               </ul>
             </div>
-            <div 
+            <div
               className="absolute inset-0 opacity-10"
               style={{
                 backgroundImage: `url('/images/souko.jpg')`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'center'
               }}
             />
-          </div>
+          </a>
         </div>
 
         {/* グループ会社事業 */}
