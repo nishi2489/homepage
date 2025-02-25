@@ -221,4 +221,4 @@ export const RecruitTab = () => {
       </Card>
     </div>
   );
-}; 
+};

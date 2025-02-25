@@ -18,13 +18,13 @@ const Header = () => {
 
           {/* PCナビ */}
           <div className="hidden md:flex items-center space-x-8">
+            {/* ▼ ここが “アンカーリンク” になっている */}
             <a href="#services" className="text-white hover:text-white/80 transition-colors">
               サービス
             </a>
             <a href="#recruit" className="text-white hover:text-white/80 transition-colors">
               採用情報
             </a>
-            {/* ▼ 電話番号を1行で表示するため、whitespace-nowrap を付ける */}
             <div className="text-right whitespace-nowrap">
               <p className="text-sm text-white/80 inline-block mr-2">
                 お問い合わせ
@@ -61,7 +61,6 @@ const Header = () => {
               >
                 採用情報
               </a>
-              {/* ▼ スマホでも電話番号を1行に */}
               <div className="px-3 py-2 whitespace-nowrap">
                 <p className="text-sm text-white/80 inline-block mr-2">
                   お問い合わせ

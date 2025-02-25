@@ -1,4 +1,6 @@
-"use client";
+// app/page.tsx
+"use client"; 
+// ↑ もしサーバーコンポーネントではなく、クライアントサイドの動きをしたい場合に指定
 
 import Hero from "@/components/Hero";
 import Company from "@/components/Company";
@@ -11,15 +13,19 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <div className="container mx-auto px-4">
+        {/* Companyコンポーネント呼び出し */}
         <Company />
+
         <div className="py-8">
           <Service />
         </div>
+        
         <div className="py-8">
           <Recruitment />
         </div>
+        
         <div className="service-section">
-          <a 
+          <a
             href="https://shoeinet.com/business/keiki/index.php"
             target="_blank"
             rel="noopener noreferrer"
@@ -29,8 +35,9 @@ export default function Home() {
             計器工事
           </a>
         </div>
+        
         <ServicesTab />
       </div>
     </main>
   );
-} 
+}
