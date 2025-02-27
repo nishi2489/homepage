@@ -3,6 +3,31 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+// 会社情報データ
+const companyInfo = {
+  overview: {
+    name: "株式会社 昭栄",
+    established: "1987年4月",
+    capital: "3,000万円",
+    employees: "300名",
+    president: "代表取締役 西原 昭仁",
+    business: "電気・ガス設備の保安管理業務、電気工事業、管工事業",
+    licenses: [
+      "建設業許可 東京都知事許可(特-2)第116387号",
+      "電気工事業 東京都知事届出第94287号",
+      "一般建設業 東京都知事許可(般-2)第116387号"
+    ]
+  },
+  history: [
+    { year: "1987年", event: "株式会社昭栄を設立" },
+    { year: "1988年", event: "東京電力株式会社の工事会社に認定" },
+    { year: "1995年", event: "東京ガス株式会社の工事会社に認定" },
+    { year: "2010年", event: "太陽光発電システム設置工事開始" },
+    { year: "2015年", event: "EV充電設備工事開始" },
+    { year: "2020年", event: "5G通信基地局設備工事開始" }
+  ]
+};
+
 export const CompanyTab = () => {
   const services = [
     {
@@ -51,148 +76,169 @@ export const CompanyTab = () => {
   ];
 
   return (
-    <div className="space-y-6 p-6">
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Building2 className="h-6 w-6" />
+    <div 
+      id="company" 
+      className="space-y-8 p-6 relative bg-gradient-to-b from-gray-50 to-white"
+      style={{ scrollMarginTop: '140px' }}
+    >
+      <Card className="border-0 shadow-xl">
+        <CardHeader className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-t-lg">
+          <CardTitle className="flex items-center gap-2 text-2xl">
+            <Building2 className="h-8 w-8" />
             会社情報
           </CardTitle>
-          <CardDescription>1990年の創業以来、電気設備の安全を守り続けています</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="mb-6">
-            <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"
-              alt="オフィスビル"
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
-          </div>
-          <div>
-            <h3 className="font-semibold mb-2">会社概要</h3>
-            <p>安全と信頼を第一に、社会インフラの維持に貢献します。</p>
-          </div>
-          <div className="space-y-4">
-            <motion.div 
-              className="border-b pb-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="font-semibold text-gray-900">社名</h3>
-              <p className="text-gray-600">株式会社昭栄電気産業</p>
-            </motion.div>
-            <motion.div 
-              className="border-b pb-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="font-semibold text-gray-900">所在地</h3>
-              <p className="text-gray-600">東京都葛飾区鎌倉3-58-2</p>
-            </motion.div>
-            <motion.div 
-              className="border-b pb-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="font-semibold text-gray-900">グループ会社</h3>
-              <ul className="text-gray-600 list-disc list-inside">
-                <li>株式会社昭栄ホールディングス</li>
-                <li>株式会社昭栄エンジニアサービス</li>
-                <li>株式会社ＭＴサービス</li>
-                <li>株式会社Ｓアドバンス</li>
-              </ul>
-            </motion.div>
-            <motion.div 
-              className="border-b pb-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="font-semibold text-gray-900">資格取得者</h3>
-              <ul className="text-gray-600 list-disc list-inside">
-                <li>第一級電気施工管理技士：1名</li>
-                <li>第三種電気主任技術者：2名</li>
-                <li>第一種電気工事士：10名</li>
-                <li>第二種電気工事士：223名</li>
-              </ul>
-              <h3 className="font-semibold text-gray-900 mt-4">取得免許</h3>
-              <ul className="text-gray-600 list-disc list-inside">
-                <li>一般建設業 東京都知事許可（般-17）第89280号</li>
-                <li>特定労働者派遣事業 厚生労働大臣届出 特13-12-0057号</li>
-                <li>電気通信工事業 東京都知事許可（般-9）第89280号</li>
-                <li>電気工事業 東京都知事届出第 045060号</li>
-                <li>日本建設業施工管理技師会 第20046号</li>
-              </ul>
-            </motion.div>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-2">事業内容</h3>
-            <p className="text-gray-600">
-              電柱設計、定期調査、竣工調査、ガス調査、フィールド作業、外線・内線電気工事、
-              EV充電器施工、太陽光・蓄電池施工、ものづくり開発、警備設備工事、派遣業
-            </p>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card className="bg-gradient-to-br from-blue-50 to-white">
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold text-blue-900">主要取引先</CardTitle>
-          <CardDescription className="text-blue-800">
-            <ul className="list-disc list-inside space-y-1">
-              <li>東京電力パワーグリッド株式会社</li>
-              <li>テプコ・ソリューション・アドバンス株式会社</li>
-              <li>セコム株式会社</li>
-              <li>東電タウンプランニング株式会社</li>
-              <li>東京エナジーアライアンス株式会社</li>
-              <li>テプコホームテック株式会社</li>
-            </ul>
+          <CardDescription className="text-blue-100 text-lg">
+            電気とガスのライフラインを支える、昭栄の企業情報
           </CardDescription>
         </CardHeader>
-      </Card>
+        <CardContent className="p-8">
+          <div className="space-y-12">
+            {/* 会社概要セクション */}
+            <section>
+              <h3 className="text-2xl font-bold mb-8 text-gray-800 border-b pb-2">
+                会社概要
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {Object.entries(companyInfo.overview).map(([key, value], index) => (
+                  <motion.div
+                    key={key}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="bg-white p-6 rounded-xl shadow-md"
+                  >
+                    <h4 className="text-gray-500 mb-2">
+                      {key === 'name' ? '会社名' :
+                       key === 'established' ? '設立' :
+                       key === 'capital' ? '資本金' :
+                       key === 'employees' ? '従業員数' :
+                       key === 'president' ? '代表者' :
+                       key === 'business' ? '事業内容' :
+                       key === 'licenses' ? '許認可' : key}
+                    </h4>
+                    {Array.isArray(value) ? (
+                      <ul className="space-y-2">
+                        {value.map((item, i) => (
+                          <li key={i} className="text-gray-800">{item}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-800 font-medium">{value}</p>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </section>
 
-      <div className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              事業内容
-            </h2>
-            <p className="mt-4 text-xl text-gray-500">
-              安全と信頼を第一に、社会インフラの維持に貢献します
-            </p>
-          </div>
-
-          <div className="mt-16">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col"
+            {/* 企業理念セクション */}
+            <section className="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl">
+              <h3 className="text-2xl font-bold mb-8 text-gray-800">
+                企業理念
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.div 
+                  className="bg-white p-6 rounded-xl shadow-lg"
+                  whileHover={{ scale: 1.02 }}
                 >
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900">
+                  <h4 className="text-xl font-bold mb-4 text-blue-600">使命</h4>
+                  <p className="text-gray-600">
+                    安全で快適な暮らしを支えるライフラインの維持に貢献します
+                  </p>
+                </motion.div>
+                <motion.div 
+                  className="bg-white p-6 rounded-xl shadow-lg"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <h4 className="text-xl font-bold mb-4 text-blue-600">ビジョン</h4>
+                  <p className="text-gray-600">
+                    技術革新と環境変化に柔軟に対応し、持続可能な社会の実現に寄与します
+                  </p>
+                </motion.div>
+                <motion.div 
+                  className="bg-white p-6 rounded-xl shadow-lg"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <h4 className="text-xl font-bold mb-4 text-blue-600">価値観</h4>
+                  <p className="text-gray-600">
+                    誠実・信頼・向上心を大切にし、お客様と社会に貢献します
+                  </p>
+                </motion.div>
+              </div>
+            </section>
+
+            {/* 沿革セクション */}
+            <section>
+              <h3 className="text-2xl font-bold mb-8 text-gray-800 border-b pb-2">
+                沿革
+              </h3>
+              <div className="space-y-4">
+                {companyInfo.history.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm"
+                  >
+                    <div className="min-w-[100px] font-bold text-blue-600">
+                      {item.year}
+                    </div>
+                    <div className="text-gray-700">{item.event}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+
+            {/* 主要取引先セクションのスタイルを修正 */}
+            <section className="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl">
+              <h3 className="text-2xl font-bold mb-8 text-gray-800">
+                主要取引先
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  "東京電力パワーグリッド株式会社",
+                  "テプコ・ソリューション・アドバンス株式会社",
+                  "セコム株式会社",
+                  "東電タウンプランニング株式会社",
+                  "東京エナジーアライアンス株式会社",
+                  "テプコホームテック株式会社"
+                ].map((company, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white p-4 rounded-lg shadow-sm"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <p className="text-gray-700">{company}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+
+            {/* 事業内容セクションのスタイルを修正 */}
+            <section>
+              <h3 className="text-2xl font-bold mb-8 text-gray-800 border-b pb-2">
+                事業内容
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {services.map((service, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <h4 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                      <span className="text-blue-500 mr-3">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
                       {service.title}
-                    </h3>
-                    <p className="mt-4 text-base text-gray-500">
-                      {service.description}
-                    </p>
-                    <ul className="mt-6 space-y-4">
+                    </h4>
+                    <p className="text-gray-600 mb-4">{service.description}</p>
+                    <ul className="space-y-3">
                       {service.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-start">
-                          <div className="flex-shrink-0">
-                            <svg className="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <div className="ml-3">
-                            <p className="text-base text-gray-500">
+                        <li key={itemIndex} className="flex items-start gap-3">
+                          <span className="text-blue-500 flex-shrink-0">✓</span>
+                          <div>
+                            <p className="text-gray-600">
                               {typeof item === 'string' ? item : item.text}
                             </p>
                             {typeof item !== 'string' && item.description && (
@@ -204,13 +250,13 @@ export const CompanyTab = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
           </div>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };

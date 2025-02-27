@@ -27,6 +27,31 @@ const Header = ({ onTabChange }: HeaderProps) => {
     }
   };
 
+  const headerStyle = {
+    position: 'relative',
+    width: '100%',
+    height: '100vh',
+    // ... 既存のコード ...
+  } as const;
+
+  const textContainerStyle = {
+    position: 'absolute',
+    top: '50%',
+    // PCの場合は中央寄せ、モバイルの場合は左寄せにする
+    '@media (min-width: 768px)': {
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      textAlign: 'center' as const,
+    },
+    '@media (max-width: 767px)': {
+      left: '20px', // 左端からの余白
+      transform: 'translateY(-50%)',
+      textAlign: 'left' as const,
+    },
+    color: 'white',
+    // ... 既存のコード ...
+  } as const;
+
   return (
     <header className="bg-gray-900/80 backdrop-blur-sm fixed w-full top-0 z-50 transition-colors">
       <nav className="container-width px-4 sm:px-6 lg:px-8">

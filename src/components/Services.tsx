@@ -103,7 +103,7 @@ const Services = () => {
           安全を第一に考えたサービス
         </h2>
 
-        <p className="text-center text-gray-600 mb-12">
+        <p className="text-left md:text-center text-gray-600 mb-12 px-4 md:px-0">
           お客様の大切な設備を守り、安心して使用いただけるよう、<br className="hidden md:inline" />
           徹底した安全管理と確実な点検を提供しています
         </p>
