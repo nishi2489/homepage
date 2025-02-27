@@ -14,6 +14,7 @@ export const ServicesTab = () => {
 
   return (
     <motion.div
+      id="services"
       initial="hidden"
       animate="visible"
       className="grid grid-cols-1 md:grid-cols-2 gap-6"

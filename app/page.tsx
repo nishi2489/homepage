@@ -1,33 +1,51 @@
 "use client";
 
-import React from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../src/components/ui/tabs";
-import { ServicesTab } from "../src/components/tabs/ServicesTab";
-import { RecruitTab } from "../src/components/tabs/RecruitTab";
-import Header from "../src/components/Header";
+import { useState, useRef, useEffect } from "react";
+import Header from "@/app/components/Header";    // Header のパスは適宜修正
+import ServicesTab from "@/app/tabs/ServicesTab"; // サービス表示コンポーネント
+import RecruitTab from "@/app/tabs/RecruitTab";   // 採用情報表示コンポーネント
 
-export default function Home() {
+export default function Page() {
+  // どのタブを表示中かを管理
+  const [currentTab, setCurrentTab] = useState<"services" | "recruit">("services");
+
+  // 各タブのコンポーネントをラップする DOM への参照
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const recruitRef = useRef<HTMLDivElement>(null);
+
+  // Header から呼ばれるタブ切り替えハンドラ
+  const handleTabChange = (tab: "services" | "recruit") => {
+    setCurrentTab(tab);
+    // state 更新後にスクロールを実行したいので、少し遅らせる
+    // (useEffect にする方法もありますが、簡単なサンプルとして setTimeout を使います)
+    setTimeout(() => {
+      if (tab === "services" && servicesRef.current) {
+        servicesRef.current.scrollIntoView({ behavior: "smooth" });
+      } else if (tab === "recruit" && recruitRef.current) {
+        recruitRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 0);
+  };
+
   return (
-    <main>
-      <Header />
-      <div className="bg-white">
-        <div className="pt-[60px]">
-          <Tabs defaultValue="services" className="w-full max-w-5xl mx-auto">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="services">サービス</TabsTrigger>
-              <TabsTrigger value="recruit">採用情報</TabsTrigger>
-            </TabsList>
-            <div className="mt-[60px]">
-              <TabsContent value="services">
-                <ServicesTab />
-              </TabsContent>
-              <TabsContent value="recruit">
-                <RecruitTab />
-              </TabsContent>
-            </div>
-          </Tabs>
+    <>
+      {/* Header に onTabChange を渡す */}
+      <Header onTabChange={handleTabChange} />
+
+      <main className="pt-20"> 
+        {/* 上部ヘッダーが fixed なので余白をとる想定 (pt-20 など) */}
+
+        {/* サービス */}
+        <div ref={servicesRef}>
+          {/* currentTab に応じてコンポーネントを表示し分ける・または単純に両方並べるかは好み */}
+          {currentTab === "services" && <ServicesTab />}
         </div>
-      </div>
-    </main>
+
+        {/* 採用情報 */}
+        <div ref={recruitRef}>
+          {currentTab === "recruit" && <RecruitTab />}
+        </div>
+      </main>
+    </>
   );
-} 
+}

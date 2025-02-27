@@ -97,9 +97,8 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-16">
+    <section className="py-16">
       <div className="container-width">
-        {/* ★ ここを1行で収めたいので、whitespace-nowrap とスマホ用にフォントサイズ小さめ指定 */}
         <h2 className="text-center font-bold mb-4 whitespace-nowrap text-base sm:text-lg md:text-3xl">
           安全を第一に考えたサービス
         </h2>
