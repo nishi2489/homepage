@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ServicesTab } from "./tabs/ServicesTab";
 import { RecruitTab } from "./tabs/RecruitTab";
+import { CompanyTab } from "./tabs/CompanyTab";
 
 const TabsContainer = () => {
   const [tabValue, setTabValue] = useState("services");
@@ -36,27 +37,30 @@ const TabsContainer = () => {
   };
 
   return (
-    <div className="bg-white">
-      <div className="pt-[60px]">
-        <Tabs
-          value={tabValue}
-          onValueChange={handleTabChange}
-          className="w-full max-w-5xl mx-auto"
-        >
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="services">サービス</TabsTrigger>
-            <TabsTrigger value="recruit">採用情報</TabsTrigger>
-          </TabsList>
+    <div>
+      <div className="h-32 bg-gray-900"></div>
+      <div className="bg-white">
+        <div className="pt-[60px]">
+          <Tabs
+            value={tabValue}
+            onValueChange={handleTabChange}
+            className="w-full max-w-5xl mx-auto"
+          >
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="services">サービス</TabsTrigger>
+              <TabsTrigger value="recruit">採用情報</TabsTrigger>
+            </TabsList>
 
-          <div className="mt-[60px]">
-            <TabsContent value="services" id="service-section">
-              <ServicesTab />
-            </TabsContent>
-            <TabsContent value="recruit" id="recruit-section">
-              <RecruitTab />
-            </TabsContent>
-          </div>
-        </Tabs>
+            <div className="mt-[60px]">
+              <TabsContent value="services" id="service-section">
+                <ServicesTab />
+              </TabsContent>
+              <TabsContent value="recruit" id="recruit-section">
+                <RecruitTab />
+              </TabsContent>
+            </div>
+          </Tabs>
+        </div>
       </div>
     </div>
   );
