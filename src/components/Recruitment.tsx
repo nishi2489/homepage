@@ -113,7 +113,7 @@ const Recruitment = () => {
             </span>
           </div>
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-3xl font-bold mb-6 text-gray-800">計器工事</h3>
+            <h3 className="text-3xl font-bold mb-6 text-gray-800">メーター工事</h3>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               一般家庭に設置されている電力量計を計量法に基づき10年に1度の周期で交換する業務です。
               当社は、電力会社から業務委託を受けて電力量計の交換工事を実施しております。

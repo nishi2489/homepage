@@ -126,7 +126,7 @@ const Services = () => {
               <div className="flex items-center gap-3 mb-4">
                 <Gauge className="text-yellow-400" size={28} />
                 <div className="text-xl font-bold hover:text-blue-600 transition-colors">
-                  計器工事
+                  メーター工事
                 </div>
               </div>
               <p className="text-sm text-gray-600 mb-4">

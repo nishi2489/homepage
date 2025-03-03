@@ -17,30 +17,15 @@ export const ServicesTab = () => {
       id="services"
       initial="hidden"
       animate="visible"
-      className="grid grid-cols-1 md:grid-cols-2 gap-6"
+      className="grid grid-cols-1 gap-6"
     >
-      {/* ▼ 画像カード1 */}
+      {/* ▼ 画像カード */}
       <motion.div variants={itemVariants} custom={0}>
         <Card className="overflow-hidden shadow-md hover:shadow-xl transition-shadow">
           <CardContent className="p-0">
             <div className="relative w-full aspect-[16/9]">
               <img
                 src="/images/keiki.jpg"
-                alt="電気設備サービス"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-          </CardContent>
-        </Card>
-      </motion.div>
-
-      {/* ▼ 画像カード2 */}
-      <motion.div variants={itemVariants} custom={1}>
-        <Card className="overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-          <CardContent className="p-0">
-            <div className="relative w-full aspect-[16/9]">
-              <img
-                src="/images/item.jpg"
                 alt="電気設備サービス"
                 className="absolute inset-0 w-full h-full object-cover"
               />
