@@ -18,12 +18,12 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative h-full flex items-center justify-center text-white text-center z-10"
+        className="relative h-full flex items-center justify-center text-white text-center z-10 px-4"
       >
-        <div className="p-8 rounded-lg max-w-4xl">
-          <h1 className="font-bold leading-tight text-4xl md:text-7xl mb-6">
-          　安全な電気設備で<br />
-          　安心な暮らしを守る
+        <div className="p-4 md:p-8 rounded-lg max-w-4xl">
+          <h1 className="font-bold leading-tight text-3xl sm:text-5xl md:text-7xl mb-6 whitespace-pre-line">
+            安全な電気設備で{'\n'}
+            安心な暮らしを守る
           </h1>
         </div>
       </motion.div>
