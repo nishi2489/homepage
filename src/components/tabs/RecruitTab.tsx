@@ -67,10 +67,10 @@ export const RecruitTab = () => {
                 >
                   <h4 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
                     <span className="text-blue-500 mr-3">02</span>
-                    稼げる仕組み
+                    安定性抜群！
                   </h4>
                   <p className="text-gray-600 leading-relaxed">
-                    給与形態に歩合制やインセンティブ制を導入しており業務量に見合った給料がもらえる仕組みのため稼げます！
+                    電気やガスといった生活になくてはならないライフラインの仕事なので、安定性は抜群。太陽光設備、充電設備、5G通信基地設備など新エネルギーへの新規事業へも拡大中！
                   </p>
                 </motion.div>
                 <motion.div 
@@ -80,10 +80,10 @@ export const RecruitTab = () => {
                 >
                   <h4 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
                     <span className="text-blue-500 mr-3">03</span>
-                    安定性抜群！
+                    稼げる仕組み
                   </h4>
                   <p className="text-gray-600 leading-relaxed">
-                    電気やガスといった生活になくてはならないライフラインの仕事なので、安定性は抜群。太陽光設備、充電設備、5G通信基地設備など新エネルギーへの新規事業へも拡大中！
+                    給与形態に歩合制やインセンティブ制を導入しており業務量に見合った給料がもらえる仕組みのため稼げます！
                   </p>
                 </motion.div>
               </div>

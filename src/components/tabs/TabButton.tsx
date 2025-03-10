@@ -10,7 +10,7 @@ export const TabButton = ({ isActive, onClick, children }: TabButtonProps) => {
       onClick={onClick}
       style={{
         padding: '16px 32px',
-        fontSize: '18px',
+        fontSize: '28px',
         borderBottom: isActive ? '4px solid #3b82f6' : '4px solid transparent',
         color: isActive ? '#3b82f6' : '#6b7280',
         background: isActive ? '#dbeafe' : 'transparent',

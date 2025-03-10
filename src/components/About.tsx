@@ -149,7 +149,7 @@ const About = () => {
                 </li>
                 <li className="flex items-center gap-3 text-lg">
                   <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                  その他工事業務
+                  新規事業業務
                 </li>
               </ul>
             </div>

@@ -10,14 +10,14 @@ const Recruitment = () => {
       description: "電気の職種が未経験でもプロに育成するプログラムを確立。300人以上を電気のプロとして成功させております！"
     },
     {
-      icon: "💰",
-      title: "(2)稼げる仕組み",
-      description: "給与形態に歩合制やインセンティブ制を導入しており業務量に見合った給料がもらえる仕組みのため稼げます！"
+      icon: "🏢",
+      title: "(2)安定性抜群！",
+      description: "電気やガスといった生活になくてはならないライフラインの仕事なので、安定性は抜群。太陽光設備、充電設備、5G通信基地設備など新エネルギーへの新規事業へも拡大中！"
     },
     {
-      icon: "🏢",
-      title: "(3)安定性抜群！",
-      description: "電気やガスといった生活になくてはならないライフラインの仕事なので、安定性は抜群。太陽光設備、充電設備、5G通信基地設備など新エネルギーへの新規事業へも拡大中！"
+      icon: "💰",
+      title: "(3)稼げる仕組み",
+      description: "給与形態に歩合制やインセンティブ制を導入しており業務量に見合った給料がもらえる仕組みのため稼げます！"
     }
   ];
 
@@ -113,10 +113,10 @@ const Recruitment = () => {
             </span>
           </div>
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-3xl font-bold mb-6 text-gray-800">計器工事</h3>
+            <h3 className="text-3xl font-bold mb-6 text-gray-800">メーター工事</h3>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              一般家庭に設置されている電力量計を計量法に基づき10年に1度の周期で交換する業務です。
-              当社は、電力会社から業務委託を受けて電力量計の交換工事を実施しております。
+              一般家庭に設置されている電気メーターを計量法に基づき10年に1度の周期で交換する業務です。
+              当社は、電力会社から業務委託を受けて電気メーターの交換工事を実施しております。
             </p>
             <a 
               href="https://shoeinet.com/business/keiki/index.php"
