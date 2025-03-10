@@ -31,7 +31,7 @@ const companyInfo = {
 export const CompanyTab = () => {
   const services = [
     {
-      title: "計器工事",
+      title: "メーター工事",
       description: "お客様の大切な設備を守り、安心してご使用いただけるよう、徹底した安全管理と確実な点検を提供しています",
       items: [
         {

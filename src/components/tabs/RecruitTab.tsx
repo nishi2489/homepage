@@ -6,20 +6,14 @@ import { motion } from "framer-motion";
 const locations = {
   offices: [
     { name: "本社", address: "東京都 葛飾区 鎌倉3丁目58番2号" },
-    { name: "板橋事務所", address: "東京都 板橋区 南町38番6号" },
     { name: "品川事務所", address: "東京都 品川区 戸越3丁目9番3号" },
     { name: "三郷事務所", address: "埼玉県 三郷市 高洲1丁目308番1号" },
-    { name: "幸手事務所", address: "埼玉県 幸手市 北1丁目10番3号" },
-    { name: "登戸事務所", address: "神奈川県 川崎市多摩区 宿河原1丁目6番1号" },
     { name: "千葉事務所", address: "千葉県 千葉市若葉区 愛生町70番2号" }
   ],
   areas: [
     { name: "東京エリア", regions: "23区内、都下全域（三鷹市周辺、立川市周辺、八王子市周辺、町田市周辺）" },
     { name: "千葉エリア", regions: "船橋市周辺、千葉市周辺、柏市周辺" },
-    { name: "埼玉エリア", regions: "さいたま市周辺、川口市周辺、三郷市周辺、春日部市周辺" },
-    { name: "神奈川エリア", regions: "川崎市周辺、横浜市周辺、相模原市周辺" },
-    { name: "茨城エリア", regions: "古河市周辺、筑西市周辺、笠間市周辺" },
-    { name: "山梨エリア", regions: "大月市周辺、富士吉田市周辺" }
+    { name: "埼玉エリア", regions: "さいたま市周辺、川口市周辺、三郷市周辺、春日部市周辺" }
   ]
 };
 
@@ -93,66 +87,43 @@ export const RecruitTab = () => {
               <h3 className="text-2xl font-bold mb-8 text-gray-800 border-b pb-2">
                 業務内容
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div 
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <h4 className="flex items-center text-xl font-bold mb-4 text-gray-800">
-                    <span className="text-3xl mr-3">💡</span>
-                    電気メーターの交換業務
+              <div className="space-y-8">
+                {/* メイン業務 */}
+                <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-500">
+                  <h4 className="flex items-center text-2xl font-bold mb-6 text-gray-800">
+                    <span className="text-3xl mr-3">⚡</span>
+                    メイン業務：電気メーターの交換業務
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-lg leading-relaxed mb-4">
                     一般のご家庭に設置されている電気メーターを定期的に交換する業務です。担当エリアの戸建住宅やアパート、マンションを訪問し交換作業を行ないます。
                   </p>
-                </motion.div>
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <p className="text-gray-700">
+                      <span className="font-semibold">Point:</span> 電力会社から業務委託を受けて電力量計の交換工事を実施しております。計量法に基づき10年に1度の周期で交換する重要な業務です。
+                    </p>
+                  </div>
+                </div>
+
+                {/* グループ会社リンク */}
                 <motion.div 
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                  className="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                 >
-                  <h4 className="flex items-center text-xl font-bold mb-4 text-gray-800">
-                    <span className="text-3xl mr-3">💡</span>
-                    電気の安全訪問員
-                  </h4>
-                  <p className="text-gray-600">
-                    お客さまのご要望に合わせて電気が安全に使用できるようにメンテナンスを行う業務です。電気のお困りごとを解決する事でお客さまには大変喜ばれているお仕事です。
+                  <h4 className="text-xl font-bold mb-4 text-gray-800">その他の業務について</h4>
+                  <p className="text-gray-600 mb-6">
+                    電気設備の安全点検、ガスの安全点検、新規電気設備の安全点検など、グループ会社【昭栄電気産業】ではさまざまな事業を展開しています。
                   </p>
-                </motion.div>
-                <motion.div 
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <h4 className="flex items-center text-xl font-bold mb-4 text-gray-800">
-                    <span className="text-3xl mr-3">💡</span>
-                    電気設備の安全点検
-                  </h4>
-                  <p className="text-gray-600">
-                    一般のご家庭へ定期的にお伺いし法令点検を行います。お客さまが安全で高品質な電気をご使用いただくための業務になります。こちらの業務もお客さまから感謝のお言葉をいただくことが多いです。
-                  </p>
-                </motion.div>
-                <motion.div 
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <h4 className="flex items-center text-xl font-bold mb-4 text-gray-800">
-                    <span className="text-3xl mr-3">💡</span>
-                    新規電気設備の安全点検
-                  </h4>
-                  <p className="text-gray-600">
-                    東京都内の新築物件に対して電気のご利用開始前に法令点検を行います。お住いになられるお客さまが安全で高品質な電気をご利用いただくための業務になります。
-                  </p>
-                </motion.div>
-                <motion.div 
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <h4 className="flex items-center text-xl font-bold mb-4 text-gray-800">
-                    <span className="text-3xl mr-3">💡</span>
-                    ガスの安全点検
-                  </h4>
-                  <p className="text-gray-600">
-                    一般のご家庭へ定期的にお伺いし法令点検を行います。また、お引越しに関わるガスの開始、終了を対応します。担当エリアを巡回しながら、「ガス漏れは発生していないか」「ガスの風呂釜や湯沸かし器はきちんと動くか」をチェックします。
-                  </p>
+                  <a 
+                    href="https://shoeinet.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300"
+                  >
+                    <span>グループ会社の業務内容はこちら</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
                 </motion.div>
               </div>
             </section>
@@ -299,42 +270,42 @@ export const RecruitTab = () => {
                 応募から入社までの流れ
               </h3>
               <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">
                     1
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-bold text-lg">応募方法</h4>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 break-words">
                       お電話またはオンラインフォームからお選びいただけます
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">
                     2
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-bold text-lg">書類選考と面接</h4>
-                    <p className="text-gray-600">書類選考後、面接を行います。1日同行の職場体験もあり（日当9,000円、交通費込み）。</p>
+                    <p className="text-gray-600 break-words">書類選考後、面接を行います。1日同行の職場体験もあり（日当9,000円、交通費込み）。</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">
                     3
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-bold text-lg">職場体験のすすめ</h4>
-                    <p className="text-gray-600">面接時に1日同行で、職場環境や仕事内容を体験できます。</p>
+                    <p className="text-gray-600 break-words">面接時に1日同行で、職場環境や仕事内容を体験できます。</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">
                     4
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-bold text-lg">採用決定と入社手続き</h4>
-                    <p className="text-gray-600">採用決定後、入社日を調整します。</p>
+                    <p className="text-gray-600 break-words">採用決定後、入社日を調整します。</p>
                   </div>
                 </div>
               </div>

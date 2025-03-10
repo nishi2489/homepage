@@ -24,7 +24,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Noto Sans JP", "sans-serif"],
+        sans: ["Noto Serif JP", "serif"],
       },
     },
   },

@@ -14,17 +14,10 @@ export const AchievementsTab = () => (
         <CardDescription>私たちと一緒に、社会インフラの未来を創っていきませんか</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           <div>
             <img
-              src="/images/saku.jpg"
-              alt="電気設備サービス"
-              className="w-full h-48 object-cover rounded-lg"
-            />
-          </div>
-          <div>
-            <img
-              src="/images/item.jpg"
+              src="/images/keiki.jpg"
               alt="電気設備サービス"
               className="w-full h-48 object-cover rounded-lg"
             />
