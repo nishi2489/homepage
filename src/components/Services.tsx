@@ -105,7 +105,7 @@ const Services = () => {
   const [selectedStep, setSelectedStep] = useState(1);
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+    <div className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container-width">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
@@ -143,7 +143,6 @@ const Services = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/50 to-transparent opacity-50"></div>
             <div className="relative z-10">
-<<<<<<< HEAD
               <div className="flex items-center gap-3 mb-6">
                 <motion.div
                   whileHover={{ rotate: 180 }}
@@ -338,13 +337,6 @@ const Services = () => {
                     </div>
                   </div>
                 </motion.div>
-=======
-              <div className="flex items-center gap-3 mb-4">
-                <Gauge className="text-yellow-400" size={28} />
-                <div className="text-xl font-bold hover:text-blue-600 transition-colors">
-                  メーター工事
-                </div>
->>>>>>> 673c7d8bcf2680d096797ad296023beff373b744
               </div>
             </div>
           </motion.div>
@@ -378,7 +370,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
