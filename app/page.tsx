@@ -7,24 +7,28 @@ import RecruitTab from "@/app/tabs/RecruitTab";   // 採用情報表示コンポ
 
 export default function Page() {
   // どのタブを表示中かを管理
-  const [currentTab, setCurrentTab] = useState<"services" | "recruit">("services");
+  const [currentTab, setCurrentTab] = useState<"services" | "recruit" | "company">("services");
 
   // 各タブのコンポーネントをラップする DOM への参照
   const servicesRef = useRef<HTMLDivElement>(null);
   const recruitRef = useRef<HTMLDivElement>(null);
+  const companyRef = useRef<HTMLDivElement>(null);
 
   // Header から呼ばれるタブ切り替えハンドラ
-  const handleTabChange = (tab: "services" | "recruit") => {
-    setCurrentTab(tab);
-    // state 更新後にスクロールを実行したいので、少し遅らせる
-    // (useEffect にする方法もありますが、簡単なサンプルとして setTimeout を使います)
-    setTimeout(() => {
-      if (tab === "services" && servicesRef.current) {
-        servicesRef.current.scrollIntoView({ behavior: "smooth" });
-      } else if (tab === "recruit" && recruitRef.current) {
-        recruitRef.current.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 0);
+  const handleTabChange = (tab: "services" | "recruit" | "company" | "contact") => {
+    if (tab !== "contact") {
+      setCurrentTab(tab);
+      // state 更新後にスクロールを実行したいので、少し遅らせる
+      setTimeout(() => {
+        if (tab === "services" && servicesRef.current) {
+          servicesRef.current.scrollIntoView({ behavior: "smooth" });
+        } else if (tab === "recruit" && recruitRef.current) {
+          recruitRef.current.scrollIntoView({ behavior: "smooth" });
+        } else if (tab === "company" && companyRef.current) {
+          companyRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 0);
+    }
   };
 
   return (

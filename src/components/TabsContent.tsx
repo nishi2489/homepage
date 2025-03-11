@@ -47,7 +47,7 @@ const TabsContainer = () => {
             className="w-full max-w-5xl mx-auto"
           >
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="services">サービス</TabsTrigger>
+              <TabsTrigger value="services">事業情報</TabsTrigger>
               <TabsTrigger value="recruit">採用情報</TabsTrigger>
             </TabsList>
 

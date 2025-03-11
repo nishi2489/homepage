@@ -15,7 +15,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#services" className="text-gray-400 hover:text-white">
-                  サービス
+                  事業情報
                 </a>
               </li>
               <li>

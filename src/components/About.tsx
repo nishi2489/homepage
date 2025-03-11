@@ -21,7 +21,7 @@ const About = () => {
           <div className="mb-12 p-12 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-blue-100 shadow-xl transform hover:scale-[1.01] transition-all duration-500 border border-blue-100/50">
             <div className="relative">
               <h2 className="flex items-center gap-3 text-5xl font-extrabold">
-                <span className="bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">会社情報</span>
+                <span className="bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">企業情報</span>
               </h2>
               <div className="absolute -top-6 -left-6 w-24 h-24 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
             </div>

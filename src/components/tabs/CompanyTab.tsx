@@ -85,7 +85,7 @@ export const CompanyTab = () => {
         <CardHeader className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-t-lg">
           <CardTitle className="flex items-center gap-2 text-2xl">
             <Building2 className="h-8 w-8" />
-            会社情報
+            企業情報
           </CardTitle>
           <CardDescription className="text-blue-100 text-lg">
             電気とガスのライフラインを支える、昭栄の企業情報

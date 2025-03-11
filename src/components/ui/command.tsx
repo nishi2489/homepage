@@ -70,7 +70,7 @@ const Company = () => {
                 : "text-gray-600 hover:text-blue-500"
             }`}
           >
-            サービス
+            事業情報
           </button>
           <button
             onClick={() => setActiveTab("recruit")}
