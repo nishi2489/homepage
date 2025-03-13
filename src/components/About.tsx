@@ -3,8 +3,8 @@ import { Building2, MapPin, Users, Award, Briefcase, Building } from "lucide-rea
 const About = () => {
   return (
     <>
-      {/* 黒い背景のヘッダー部分 */}
-      <div className="bg-gray-900 text-white py-16">
+      {/* 水色の背景のヘッダー部分 */}
+      <div className="bg-sky-500 text-white py-16">
         <div className="container-width px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold">株式会社昭栄エンジニアサービス</h2>
           <p className="mt-4">

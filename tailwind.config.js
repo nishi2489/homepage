@@ -5,5 +5,23 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  // ... 省略
+  theme: {
+    extend: {
+      textShadow: {
+        'lg': '2px 2px 4px rgba(0, 0, 0, 0.5)',
+      },
+    },
+  },
+  plugins: [
+    function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    },
+  ],
 } 

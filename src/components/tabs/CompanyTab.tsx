@@ -82,12 +82,12 @@ export const CompanyTab = () => {
       style={{ scrollMarginTop: '140px' }}
     >
       <Card className="border-0 shadow-xl">
-        <CardHeader className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-t-lg">
+        <CardHeader className="bg-sky-500 text-white rounded-t-lg">
           <CardTitle className="flex items-center gap-2 text-2xl">
             <Building2 className="h-8 w-8" />
             企業情報
           </CardTitle>
-          <CardDescription className="text-blue-100 text-lg">
+          <CardDescription className="text-white/90 text-lg">
             電気とガスのライフラインを支える、昭栄の企業情報
           </CardDescription>
         </CardHeader>

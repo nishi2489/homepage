@@ -64,7 +64,7 @@ const Header = ({ onTabChange }: HeaderProps) => {
   } as const;
 
   return (
-    <header className="bg-gray-900 fixed w-full top-0 z-50 transition-colors">
+    <header className="bg-sky-500 fixed w-full top-0 z-50 transition-colors">
       <nav className="container-width px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* 左側ロゴ */}

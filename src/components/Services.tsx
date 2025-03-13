@@ -129,7 +129,7 @@ const Services = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <span className="inline-block bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 px-8 py-3 rounded-full font-bold text-white shadow-lg transform hover:scale-105 transition-transform relative overflow-hidden">
+            <span className="inline-block bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-400 px-8 py-3 rounded-full font-bold text-white shadow-lg transform hover:scale-105 transition-transform relative overflow-hidden">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></span>
               メイン事業
             </span>
@@ -141,17 +141,17 @@ const Services = () => {
             transition={{ duration: 0.7 }}
             className="block bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/50 to-transparent opacity-50"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/50 to-transparent opacity-50"></div>
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <motion.div
                   whileHover={{ rotate: 180 }}
                   transition={{ duration: 0.5 }}
-                  className="bg-yellow-100 p-3 rounded-full"
+                  className="bg-cyan-100 p-3 rounded-full"
                 >
-                  <Gauge className="text-yellow-600" size={48} />
+                  <Gauge className="text-cyan-600" size={48} />
                 </motion.div>
-                <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">
+                <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-600 to-cyan-400 bg-clip-text text-transparent">
                   メーター工事
                 </h3>
               </div>
@@ -193,8 +193,8 @@ const Services = () => {
               </div>
 
               {/* 必要資格 */}
-              <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 p-8 rounded-xl mb-8 border border-yellow-200">
-                <h4 className="text-2xl md:text-3xl font-bold mb-4 text-yellow-800">【必要資格】</h4>
+              <div className="bg-gradient-to-r from-cyan-50 to-cyan-100 p-8 rounded-xl mb-8 border border-cyan-200">
+                <h4 className="text-2xl md:text-3xl font-bold mb-4 text-cyan-800">【必要資格】</h4>
                 <p className="text-lg md:text-xl leading-relaxed text-gray-700">
                   社内外の研修課程を修了し、適性検査により合格者として認定を受けた者
                 </p>
@@ -271,7 +271,7 @@ const Services = () => {
                 {/* ステップ1: 作業のお知らせ */}
                 <div className="bg-white rounded-lg p-6 shadow-md">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="flex items-center justify-center w-10 h-10 bg-yellow-400 text-white rounded-full font-bold">1</span>
+                    <span className="flex items-center justify-center w-10 h-10 bg-cyan-400 text-white rounded-full font-bold">1</span>
                     <h4 className="text-xl font-bold">作業のお知らせ</h4>
                   </div>
                   <img
@@ -282,8 +282,8 @@ const Services = () => {
                   <p className="text-gray-700">
                     「電気計器お取り替えのお知らせ」を用いて、事前にお客さまへ作業予定日をお知らせいたします。
                   </p>
-                  <div className="mt-4 bg-yellow-50 p-4 rounded-lg">
-                    <p className="text-sm text-yellow-700">
+                  <div className="mt-4 bg-cyan-50 p-4 rounded-lg">
+                    <p className="text-sm text-cyan-700">
                       ※ご案内した日時のご都合が合わないお客さまには、専用ダイヤルにて日時変更を承っています。
                     </p>
                   </div>
@@ -292,7 +292,7 @@ const Services = () => {
                 {/* ステップ2: ご挨拶 */}
                 <div className="bg-white rounded-lg p-6 shadow-md">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="flex items-center justify-center w-10 h-10 bg-yellow-400 text-white rounded-full font-bold">2</span>
+                    <span className="flex items-center justify-center w-10 h-10 bg-cyan-400 text-white rounded-full font-bold">2</span>
                     <h4 className="text-xl font-bold">ご挨拶</h4>
                   </div>
                   <img
@@ -303,8 +303,8 @@ const Services = () => {
                   <p className="text-gray-700">
                     作業当日、作業員が身分証明書を携帯の上、ご訪問してご挨拶させていただきます。
                   </p>
-                  <div className="mt-4 bg-yellow-50 p-4 rounded-lg">
-                    <p className="text-sm text-yellow-700">
+                  <div className="mt-4 bg-cyan-50 p-4 rounded-lg">
+                    <p className="text-sm text-cyan-700">
                       お客さまの立会いは不要ですが、メーター設置場所に近づけるようご協力をお願いいたします。
                     </p>
                   </div>
@@ -313,7 +313,7 @@ const Services = () => {
                 {/* ステップ3: 作業内容 */}
                 <div className="bg-white rounded-lg p-6 shadow-md">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="flex items-center justify-center w-10 h-10 bg-yellow-400 text-white rounded-full font-bold">3</span>
+                    <span className="flex items-center justify-center w-10 h-10 bg-cyan-400 text-white rounded-full font-bold">3</span>
                     <h4 className="text-xl font-bold">作業内容</h4>
                   </div>
                   <img
@@ -324,8 +324,8 @@ const Services = () => {
                   <p className="text-gray-700">
                     屋外にある電力量計の交換を行います。
                   </p>
-                  <div className="mt-4 bg-yellow-50 p-4 rounded-lg">
-                    <ul className="space-y-2 text-sm text-yellow-700">
+                  <div className="mt-4 bg-cyan-50 p-4 rounded-lg">
+                    <ul className="space-y-2 text-sm text-cyan-700">
                       <li>• 作業の際は基本的に「停電はいたしません」</li>
                       <li>• 取外計器の指針と取付計器の指針を記録いたします</li>
                       <li>• 取付計器が正常に動作していることを液晶表示のランプで確認いたします</li>
@@ -336,7 +336,7 @@ const Services = () => {
                 {/* ステップ4: 作業終了後のお知らせ */}
                 <div className="bg-white rounded-lg p-6 shadow-md">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="flex items-center justify-center w-10 h-10 bg-yellow-400 text-white rounded-full font-bold">4</span>
+                    <span className="flex items-center justify-center w-10 h-10 bg-cyan-400 text-white rounded-full font-bold">4</span>
                     <h4 className="text-xl font-bold">作業終了後のお知らせ</h4>
                   </div>
                   <img
@@ -347,8 +347,8 @@ const Services = () => {
                   <p className="text-gray-700">
                     作業完了後、メーターの正常動作確認を行い、交換完了のお知らせを投函させていただきます。
                   </p>
-                  <div className="mt-4 bg-yellow-50 p-4 rounded-lg">
-                    <p className="text-sm text-yellow-700">
+                  <div className="mt-4 bg-cyan-50 p-4 rounded-lg">
+                    <p className="text-sm text-cyan-700">
                       新しいメーターは、今後10年間安全にご使用いただけます。
                     </p>
                   </div>
@@ -386,25 +386,47 @@ const Services = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative overflow-hidden rounded-xl shadow-lg group"
+                className="relative overflow-hidden rounded-xl shadow-lg group bg-white"
               >
-                <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: `url(${service.bgImage})` }} />
-                <div className="absolute inset-0 bg-black/60 z-10" />
+                <div className="absolute inset-0 bg-cover bg-center z-0 opacity-100" style={{ backgroundImage: `url(${service.bgImage})` }} />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/60 to-white/60 z-10" />
                 <div className="relative z-20 p-8">
-                  <div className="flex items-center gap-4 mb-6">
-                    <service.icon className="w-12 h-12 text-white" />
-                    <h3 className="text-2xl font-bold text-white">{service.title}</h3>
+                  <div className="flex items-center gap-4 mb-6 bg-white/80 p-3 rounded-xl shadow-sm">
+                    <div className="bg-cyan-50 p-3 rounded-lg shadow-sm">
+                      <service.icon className="w-12 h-12 text-cyan-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-cyan-900">{service.title}</h3>
                   </div>
-                  <p className="text-lg text-white/90 mb-6">{service.description}</p>
-                  <ul className="space-y-3">
-                    {service.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start gap-3 text-white/80">
-                        <span className="flex-shrink-0 mt-1">✓</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="glass-card mb-6">
+                    <p className="text-lg text-cyan-900 font-medium">{service.description}</p>
+                  </div>
+                  <div className="glass-card">
+                    <ul className="space-y-3">
+                      {service.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-start gap-3">
+                          <span className="flex-shrink-0 mt-1">
+                            <div className="bg-cyan-100 rounded-full p-1">
+                              <svg className="w-4 h-4 text-cyan-700" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </div>
+                          </span>
+                          <span className="text-cyan-900 font-medium leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
+                <style jsx>{`
+                  .glass-card {
+                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+                    backdrop-filter: blur(4px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    border-radius: 1rem;
+                    padding: 1.25rem;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+                  }
+                `}</style>
               </motion.div>
             ))}
           </div>
