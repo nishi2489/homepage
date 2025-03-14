@@ -12,11 +12,20 @@ const TabsContainer = () => {
   useEffect(() => {
     // ハッシュに応じてタブを切り替える関数
     const handleHashChange = () => {
-      const hash = window.location.hash; // 例: "#services" or "#recruit"
+      const hash = window.location.hash; // 例: "#services" or "#recruit" or "#company"
       if (hash === "#services") {
         setTabValue("services");
       } else if (hash === "#recruit") {
         setTabValue("recruit");
+      } else if (hash === "#company") {
+        setTabValue("company");
+        // 企業情報セクションまでスクロール
+        const companySection = document.getElementById("company");
+        if (companySection) {
+          setTimeout(() => {
+            companySection.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        }
       }
     };
 
@@ -34,11 +43,20 @@ const TabsContainer = () => {
   const handleTabChange = (value: string) => {
     setTabValue(value);
     window.location.hash = `#${value}`;
+    
+    // 企業情報タブの場合、該当セクションまでスクロール
+    if (value === "company") {
+      const companySection = document.getElementById("company");
+      if (companySection) {
+        setTimeout(() => {
+          companySection.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
   };
 
   return (
     <div>
-      <div className="h-32 bg-gray-900"></div>
       <div className="bg-white">
         <div className="pt-[60px]">
           <Tabs
@@ -46,14 +64,18 @@ const TabsContainer = () => {
             onValueChange={handleTabChange}
             className="w-full max-w-5xl mx-auto"
           >
-            <TabsList className="grid w-full grid-cols-2">
+            <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="services">事業情報</TabsTrigger>
+              <TabsTrigger value="company">企業情報</TabsTrigger>
               <TabsTrigger value="recruit">採用情報</TabsTrigger>
             </TabsList>
 
             <div className="mt-[60px]">
               <TabsContent value="services" id="service-section">
                 <ServicesTab />
+              </TabsContent>
+              <TabsContent value="company" id="company-section">
+                <CompanyTab />
               </TabsContent>
               <TabsContent value="recruit" id="recruit-section">
                 <RecruitTab />

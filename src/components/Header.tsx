@@ -12,14 +12,19 @@ interface HeaderProps {
 const Header = ({ onTabChange }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // クリック時にハッシュを書き換え＆必要ならコールバック呼び出し
   const handleNavClick = (tab: "services" | "recruit" | "contact" | "company") => {
+    // 現在のパスがルートでない場合は、ハッシュ付きのルートパスに移動
+    if (window.location.pathname !== '/') {
+      window.location.href = `/#${tab}`;
+      return;
+    }
+
+    // ルートパスにいる場合は従来の動作
     if (onTabChange) {
       onTabChange(tab);
     }
     window.location.hash = `#${tab}`;
     
-    // スクロール機能を追加
     const sectionId = tab === "services" ? "service-section" : 
                      tab === "recruit" ? "recruit-section" : 
                      tab === "company" ? "company" : 
@@ -64,12 +69,12 @@ const Header = ({ onTabChange }: HeaderProps) => {
   } as const;
 
   return (
-    <header className="bg-sky-500 fixed w-full top-0 z-50 transition-colors">
+    <header className="bg-black fixed w-full top-0 z-50 transition-colors">
       <nav className="container-width px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* 左側ロゴ */}
           <div className="flex items-center">
-            <a href="#" className="flex flex-col">
+            <a href="/" className="flex flex-col">
               <span className="text-2xl font-bold text-white">
                 昭栄エンジニアサービス
               </span>
@@ -98,7 +103,7 @@ const Header = ({ onTabChange }: HeaderProps) => {
             </button>
             <button
               className="text-xl md:text-2xl font-bold text-white hover:text-white/80 transition-colors flex items-center gap-2"
-              onClick={() => handleNavClick("contact")}
+              onClick={() => window.location.href = '/contact'}
             >
               お問い合わせはこちら
               <Mail size={24} />
@@ -146,10 +151,7 @@ const Header = ({ onTabChange }: HeaderProps) => {
               </button>
               <button
                 className="block w-full text-left px-3 py-2 text-xl font-bold text-white hover:bg-white/10 transition-colors rounded-md flex items-center gap-2"
-                onClick={() => {
-                  handleNavClick("contact");
-                  setIsOpen(false);
-                }}
+                onClick={() => window.location.href = '/contact'}
               >
                 お問い合わせはこちら
                 <Mail size={24} />

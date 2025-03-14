@@ -1,6 +1,16 @@
 const Footer = () => {
+  const handleNavClick = (hash: string) => {
+    // 現在のパスがルートでない場合は、ハッシュ付きのルートパスに移動
+    if (window.location.pathname !== '/') {
+      window.location.href = `/#${hash}`;
+      return;
+    }
+    // ルートパスにいる場合は従来の動作
+    window.location.hash = `#${hash}`;
+  };
+
   return (
-    <footer className="bg-sky-500 text-white py-12">
+    <footer className="bg-black text-white py-12">
       <div className="container-width px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
@@ -14,24 +24,36 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">リンク</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="text-white/90 hover:text-white">
+                <button
+                  onClick={() => handleNavClick("services")}
+                  className="text-white/90 hover:text-white"
+                >
                   事業情報
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#company" className="text-white/90 hover:text-white">
+                <button
+                  onClick={() => handleNavClick("company")}
+                  className="text-white/90 hover:text-white"
+                >
                   企業情報
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#recruit" className="text-white/90 hover:text-white">
+                <button
+                  onClick={() => handleNavClick("recruit")}
+                  className="text-white/90 hover:text-white"
+                >
                   採用情報
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#contact" className="text-white/90 hover:text-white flex items-center gap-2">
+                <button
+                  onClick={() => window.location.href = '/contact'}
+                  className="text-white/90 hover:text-white flex items-center gap-2"
+                >
                   お問い合わせはこちら
-                </a>
+                </button>
               </li>
             </ul>
           </div>

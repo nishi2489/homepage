@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // お使いのページコンポーネント
 import Index from "./pages/Index";
+import Contact from "./pages/Contact";
 
 // ここが問題行：元は "../styles/globals.css" などになっていたかもしれません。
 // 実際には「src/app/globals.css」にあるなら、下記のように書き換えるとOKです。
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           {/* ルートはお好みで */}
           <Route path="/" element={<Index />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
