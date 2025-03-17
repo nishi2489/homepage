@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
   // 親コンポーネントがタブ切り替え用のコールバックを渡したい場合に使う
@@ -33,6 +34,10 @@ const Header = ({ onTabChange }: HeaderProps) => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   const headerStyle = {
@@ -69,97 +74,45 @@ const Header = ({ onTabChange }: HeaderProps) => {
   } as const;
 
   return (
-    <header className="bg-black fixed w-full top-0 z-50 transition-colors">
-      <nav className="container-width px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          {/* 左側ロゴ */}
-          <div className="flex items-center">
-            <a href="/" className="flex flex-col">
-              <span className="text-2xl font-bold text-white">
-                昭栄エンジニアサービス
-              </span>
-            </a>
-          </div>
-
-          {/* PC表示のナビボタン */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              className="text-2xl md:text-3xl font-bold text-white hover:text-white/80 transition-colors"
-              onClick={() => handleNavClick("services")}
-            >
-              事業情報
-            </button>
-            <button
-              className="text-2xl md:text-3xl font-bold text-white hover:text-white/80 transition-colors"
-              onClick={() => handleNavClick("company")}
-            >
-              企業情報
-            </button>
-            <button
-              className="text-2xl md:text-3xl font-bold text-white hover:text-white/80 transition-colors"
-              onClick={() => handleNavClick("recruit")}
-            >
-              採用情報
-            </button>
-            <button
-              className="text-xl md:text-2xl font-bold text-white hover:text-white/80 transition-colors flex items-center gap-2"
-              onClick={() => window.location.href = '/contact'}
-            >
-              お問い合わせはこちら
-              <Mail size={24} />
-            </button>
-          </div>
-
-          {/* スマホメニューアイコン（ハンバーガー） */}
-          <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+    <header className="fixed top-0 left-0 w-full bg-black shadow-md z-50">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          <Link to="/" className="text-xl font-bold text-white">昭栄エンジニアサービス</Link>
+          
+          {/* モバイルメニューボタン */}
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="p-2 text-white">
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
+          
+          {/* デスクトップナビゲーション */}
+          <nav className="hidden md:flex space-x-8">
+            <Link to="/business" className="text-white hover:text-white/80 transition-colors">事業情報</Link>
+            <Link to="/company" className="text-white hover:text-white/80 transition-colors">企業情報</Link>
+            <Link to="/recruit" className="text-white hover:text-white/80 transition-colors">採用情報</Link>
+            <Link to="/contact" className="text-white hover:text-white/80 transition-colors flex items-center">
+              <Mail size={18} className="mr-1" />
+              お問い合わせ
+            </Link>
+          </nav>
         </div>
-
-        {/* スマホドロワー（開閉制御） */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="pt-2 pb-3 space-y-1">
-              <button
-                className="block w-full text-left px-3 py-2 text-2xl font-bold text-white hover:bg-white/10 transition-colors rounded-md"
-                onClick={() => {
-                  handleNavClick("services");
-                  setIsOpen(false);
-                }}
-              >
-                事業情報
-              </button>
-              <button
-                className="block w-full text-left px-3 py-2 text-2xl font-bold text-white hover:bg-white/10 transition-colors rounded-md"
-                onClick={() => {
-                  handleNavClick("company");
-                  setIsOpen(false);
-                }}
-              >
-                企業情報
-              </button>
-              <button
-                className="block w-full text-left px-3 py-2 text-2xl font-bold text-white hover:bg-white/10 transition-colors rounded-md"
-                onClick={() => {
-                  handleNavClick("recruit");
-                  setIsOpen(false);
-                }}
-              >
-                採用情報
-              </button>
-              <button
-                className="block w-full text-left px-3 py-2 text-xl font-bold text-white hover:bg-white/10 transition-colors rounded-md flex items-center gap-2"
-                onClick={() => window.location.href = '/contact'}
-              >
-                お問い合わせはこちら
-                <Mail size={24} />
-              </button>
-            </div>
-          </div>
-        )}
-      </nav>
+      </div>
+      
+      {/* モバイルメニュー */}
+      {isOpen && (
+        <div className="md:hidden bg-black py-4 px-4 shadow-lg">
+          <nav className="flex flex-col space-y-4">
+            <Link to="/business" className="text-white hover:text-white/80 transition-colors py-2" onClick={toggleMenu}>事業情報</Link>
+            <Link to="/company" className="text-white hover:text-white/80 transition-colors py-2" onClick={toggleMenu}>企業情報</Link>
+            <Link to="/recruit" className="text-white hover:text-white/80 transition-colors py-2" onClick={toggleMenu}>採用情報</Link>
+            <Link to="/contact" className="text-white hover:text-white/80 transition-colors py-2 flex items-center" onClick={toggleMenu}>
+              <Mail size={18} className="mr-1" />
+              お問い合わせ
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

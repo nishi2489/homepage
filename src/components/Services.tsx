@@ -275,11 +275,14 @@ const Services = () => {
                     <span className="flex items-center justify-center w-10 h-10 bg-[#2563eb] text-white rounded-full font-bold">1</span>
                     <h4 className="text-xl font-bold text-[#2563eb]">作業のお知らせ</h4>
                   </div>
-                  <img
-                    src="/images/notice.jpg"
-                    alt="作業お知らせのイメージ"
-                    className="w-full h-48 object-cover rounded-lg shadow-md mb-4"
-                  />
+                  <div className="relative h-64 rounded-lg shadow-md mb-4 overflow-hidden group">
+                    <img
+                      src="/images/notice.jpg"
+                      alt="作業お知らせのイメージ"
+                      className="w-full h-full object-contain transform transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                   <p className="text-gray-700">
                     「電気計器お取り替えのお知らせ」を用いて、事前にお客さまへ作業予定日をお知らせいたします。
                   </p>
@@ -296,11 +299,14 @@ const Services = () => {
                     <span className="flex items-center justify-center w-10 h-10 bg-[#2563eb] text-white rounded-full font-bold">2</span>
                     <h4 className="text-xl font-bold text-[#2563eb]">ご挨拶</h4>
                   </div>
-                  <img
-                    src="/images/greeting.jpg"
-                    alt="ご挨拶のイメージ"
-                    className="w-full h-48 object-cover rounded-lg shadow-md mb-4"
-                  />
+                  <div className="relative h-64 rounded-lg shadow-md mb-4 overflow-hidden group">
+                    <img
+                      src="/images/greeting.jpg"
+                      alt="ご挨拶のイメージ"
+                      className="w-full h-full object-contain transform transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                   <p className="text-gray-700">
                     作業当日、作業員が身分証明書を携帯の上、ご訪問してご挨拶させていただきます。
                   </p>
@@ -317,11 +323,14 @@ const Services = () => {
                     <span className="flex items-center justify-center w-10 h-10 bg-[#2563eb] text-white rounded-full font-bold">3</span>
                     <h4 className="text-xl font-bold text-[#2563eb]">作業内容</h4>
                   </div>
-                  <img
-                    src="/images/work.jpg"
-                    alt="作業内容のイメージ"
-                    className="w-full h-48 object-cover rounded-lg shadow-md mb-4"
-                  />
+                  <div className="relative h-64 rounded-lg shadow-md mb-4 overflow-hidden group">
+                    <img
+                      src="/images/work.jpg"
+                      alt="作業内容のイメージ"
+                      className="w-full h-full object-contain transform transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                   <p className="text-gray-700">
                     屋外にある電力量計の交換を行います。
                   </p>
@@ -340,11 +349,14 @@ const Services = () => {
                     <span className="flex items-center justify-center w-10 h-10 bg-[#2563eb] text-white rounded-full font-bold">4</span>
                     <h4 className="text-xl font-bold text-[#2563eb]">作業終了後のお知らせ</h4>
                   </div>
-                  <img
-                    src="/images/complete.jpg"
-                    alt="作業完了のイメージ"
-                    className="w-full h-48 object-cover rounded-lg shadow-md mb-4"
-                  />
+                  <div className="relative h-64 rounded-lg shadow-md mb-4 overflow-hidden group">
+                    <img
+                      src="/images/complete.jpg"
+                      alt="作業完了のイメージ"
+                      className="w-full h-full object-contain transform transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                   <p className="text-gray-700">
                     作業完了後、メーターの正常動作確認を行い、交換完了のお知らせを投函させていただきます。
                   </p>
@@ -353,7 +365,7 @@ const Services = () => {
                       新しいメーターは、今後10年間安全にご使用いただけます。
                     </p>
                   </div>
-                </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
               </div>
             </div>
           </motion.div>
@@ -362,21 +374,16 @@ const Services = () => {
         {/* グループ会社事業 */}
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white rounded-3xl -z-10"></div>
-          <div className="text-center mb-12 flex items-center justify-center gap-4">
-            <motion.span 
-              whileHover={{ scale: 1.05 }}
-              className="inline-block bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] px-8 py-3 rounded-full font-bold text-white shadow-lg"
-            >
-              グループ会社事業
-            </motion.span>
+          <div className="text-center mb-12">
             <motion.a 
               whileHover={{ scale: 1.05 }}
               href="https://shoeinet.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] text-white px-8 py-3 rounded-full shadow-lg text-sm font-medium"
+              className="inline-block bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] px-8 py-3 rounded-full font-bold text-white shadow-lg transform hover:scale-105 transition-transform relative overflow-hidden"
             >
-              昭栄電気産業の詳細はこちら →
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></span>
+              グループ会社「昭栄電気産業」のサービス詳細はこちら
             </motion.a>
           </div>
 
