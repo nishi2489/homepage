@@ -1,7 +1,7 @@
 {
   "routes": [
+    { "src": "^/images/(.*)", "dest": "/images/$1" },
     { "handle": "filesystem" },
-    { "src": "/images/(.*)", "dest": "/images/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ],
   "buildCommand": "npm run build",
