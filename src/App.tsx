@@ -7,9 +7,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // お使いのページコンポーネント
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
-import BusinessInfo from "./pages/BusinessInfo";
-import CompanyInfo from "./pages/CompanyInfo";
-import RecruitInfo from "./pages/RecruitInfo";
 
 // ここが問題行：元は "../styles/globals.css" などになっていたかもしれません。
 // 実際には「src/app/globals.css」にあるなら、下記のように書き換えるとOKです。
@@ -23,12 +20,11 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          {/* ルートはお好みで */}
+          {/* メインページはタブ切り替え形式に変更 */}
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/business" element={<BusinessInfo />} />
-          <Route path="/company" element={<CompanyInfo />} />
-          <Route path="/recruit" element={<RecruitInfo />} />
+          {/* 以下のルートは削除し、タブに統合 */}
+          {/* business, company, recruitはハッシュで対応 (#services, #company, #recruit) */}
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

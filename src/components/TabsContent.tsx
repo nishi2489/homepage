@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ServicesTab } from "./tabs/ServicesTab";
-import { RecruitTab } from "./tabs/RecruitTab";
-import { CompanyTab } from "./tabs/CompanyTab";
+import Services from "./Services";
+import About from "./About";
+import Recruitment from "./Recruitment";
 
 const TabsContainer = () => {
   const [tabValue, setTabValue] = useState("services");
@@ -19,13 +19,6 @@ const TabsContainer = () => {
         setTabValue("recruit");
       } else if (hash === "#company") {
         setTabValue("company");
-        // 企業情報セクションまでスクロール
-        const companySection = document.getElementById("company");
-        if (companySection) {
-          setTimeout(() => {
-            companySection.scrollIntoView({ behavior: "smooth" });
-          }, 100);
-        }
       }
     };
 
@@ -43,46 +36,59 @@ const TabsContainer = () => {
   const handleTabChange = (value: string) => {
     setTabValue(value);
     window.location.hash = `#${value}`;
-    
-    // 企業情報タブの場合、該当セクションまでスクロール
-    if (value === "company") {
-      const companySection = document.getElementById("company");
-      if (companySection) {
-        setTimeout(() => {
-          companySection.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
-    }
   };
 
   return (
-    <div>
+    <div className="w-full">
       <div className="bg-white">
-        <div className="pt-[60px]">
-          <Tabs
-            value={tabValue}
-            onValueChange={handleTabChange}
-            className="w-full max-w-5xl mx-auto"
-          >
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="services">事業情報</TabsTrigger>
-              <TabsTrigger value="company">企業情報</TabsTrigger>
-              <TabsTrigger value="recruit">採用情報</TabsTrigger>
-            </TabsList>
+        <Tabs
+          value={tabValue}
+          onValueChange={handleTabChange}
+          className="w-full"
+        >
+          {/* タブボタン */}
+          <TabsList className="grid w-full grid-cols-3 p-0 border border-gray-200 rounded-t-lg">
+            <TabsTrigger 
+              value="services" 
+              className="text-lg py-4 px-6 border-r border-gray-200 rounded-tl-lg data-[state=active]:bg-blue-50 data-[state=active]:text-blue-700"
+            >
+              事業情報
+            </TabsTrigger>
+            <TabsTrigger 
+              value="company" 
+              className="text-lg py-4 px-6 border-r border-gray-200 data-[state=active]:bg-green-50 data-[state=active]:text-green-700"
+            >
+              企業情報
+            </TabsTrigger>
+            <TabsTrigger 
+              value="recruit" 
+              className="text-lg py-4 px-6 rounded-tr-lg data-[state=active]:bg-yellow-50 data-[state=active]:text-yellow-700"
+            >
+              採用情報
+            </TabsTrigger>
+          </TabsList>
 
-            <div className="mt-[60px]">
-              <TabsContent value="services" id="service-section">
-                <ServicesTab />
-              </TabsContent>
-              <TabsContent value="company" id="company-section">
-                <CompanyTab />
-              </TabsContent>
-              <TabsContent value="recruit" id="recruit-section">
-                <RecruitTab />
-              </TabsContent>
-            </div>
-          </Tabs>
-        </div>
+          {/* タブコンテンツ */}
+          <div>
+            <TabsContent value="services" id="service-section">
+              <div className="bg-blue-50 p-0 m-0">
+                <Services />
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="company" id="company-section">
+              <div className="bg-green-50 p-0 m-0">
+                <About />
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="recruit" id="recruit-section">
+              <div className="bg-yellow-50 p-0 m-0">
+                <Recruitment />
+              </div>
+            </TabsContent>
+          </div>
+        </Tabs>
       </div>
     </div>
   );

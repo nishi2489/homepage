@@ -105,8 +105,13 @@ const Services = () => {
   const [selectedStep, setSelectedStep] = useState(1);
 
   return (
-    <div className="py-16 bg-gradient-to-b from-white to-gray-50">
-      <div className="container-width">
+    <div className="px-4 py-8 bg-blue-50 rounded-b-lg">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-center text-blue-800 mb-3">事業情報</h2>
+          <p className="text-center text-gray-600 text-lg">電力会社から委託を受け、一般家庭の電気メーターを計量法に基づき定期的に交換する業務を行っています</p>
+        </div>
+        
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}

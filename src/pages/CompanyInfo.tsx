@@ -10,7 +10,7 @@ const CompanyInfo = () => {
       <Header />
       <div className="pt-[100px] pb-[60px]">
         <div className="max-w-5xl mx-auto px-4">
-          <h1 className="text-3xl font-bold mb-8 text-center">企業情報</h1>
+          <h1 className="text-3xl font-bold mb-8 text-center text-green-700">昭栄エンジニアサービスについて</h1>
           <About />
         </div>
       </div>

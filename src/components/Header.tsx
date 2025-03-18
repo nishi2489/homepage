@@ -28,12 +28,15 @@ const Header = ({ onTabChange }: HeaderProps) => {
     
     const sectionId = tab === "services" ? "service-section" : 
                      tab === "recruit" ? "recruit-section" : 
-                     tab === "company" ? "company" : 
+                     tab === "company" ? "company-section" : 
                      "contact-section";
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+
+    // モバイルメニューを閉じる
+    setIsOpen(false);
   };
 
   const toggleMenu = () => {
@@ -88,9 +91,9 @@ const Header = ({ onTabChange }: HeaderProps) => {
           
           {/* デスクトップナビゲーション */}
           <nav className="hidden md:flex space-x-8">
-            <Link to="/business" className="text-white hover:text-white/80 transition-colors">事業情報</Link>
-            <Link to="/company" className="text-white hover:text-white/80 transition-colors">企業情報</Link>
-            <Link to="/recruit" className="text-white hover:text-white/80 transition-colors">採用情報</Link>
+            <a href="/#services" onClick={(e) => { e.preventDefault(); handleNavClick("services"); }} className="text-white hover:text-white/80 transition-colors">事業情報</a>
+            <a href="/#company" onClick={(e) => { e.preventDefault(); handleNavClick("company"); }} className="text-white hover:text-white/80 transition-colors">企業情報</a>
+            <a href="/#recruit" onClick={(e) => { e.preventDefault(); handleNavClick("recruit"); }} className="text-white hover:text-white/80 transition-colors">採用情報</a>
             <Link to="/contact" className="text-white hover:text-white/80 transition-colors flex items-center">
               <Mail size={18} className="mr-1" />
               お問い合わせ
@@ -103,9 +106,9 @@ const Header = ({ onTabChange }: HeaderProps) => {
       {isOpen && (
         <div className="md:hidden bg-black py-4 px-4 shadow-lg">
           <nav className="flex flex-col space-y-4">
-            <Link to="/business" className="text-white hover:text-white/80 transition-colors py-2" onClick={toggleMenu}>事業情報</Link>
-            <Link to="/company" className="text-white hover:text-white/80 transition-colors py-2" onClick={toggleMenu}>企業情報</Link>
-            <Link to="/recruit" className="text-white hover:text-white/80 transition-colors py-2" onClick={toggleMenu}>採用情報</Link>
+            <a href="/#services" onClick={(e) => { e.preventDefault(); handleNavClick("services"); }} className="text-white hover:text-white/80 transition-colors py-2">事業情報</a>
+            <a href="/#company" onClick={(e) => { e.preventDefault(); handleNavClick("company"); }} className="text-white hover:text-white/80 transition-colors py-2">企業情報</a>
+            <a href="/#recruit" onClick={(e) => { e.preventDefault(); handleNavClick("recruit"); }} className="text-white hover:text-white/80 transition-colors py-2">採用情報</a>
             <Link to="/contact" className="text-white hover:text-white/80 transition-colors py-2 flex items-center" onClick={toggleMenu}>
               <Mail size={18} className="mr-1" />
               お問い合わせ
