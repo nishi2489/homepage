@@ -41,6 +41,7 @@ const Recruitment = () => {
               >
                 <h4 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
                   <span className="text-yellow-500 mr-3">01</span>
+                  <span className="text-2xl mr-2">👨‍🏭</span>
                   未経験者を電気のプロへ育成
                 </h4>
                 <p className="text-gray-600 leading-relaxed">
@@ -54,6 +55,7 @@ const Recruitment = () => {
               >
                 <h4 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
                   <span className="text-yellow-500 mr-3">02</span>
+                  <span className="text-2xl mr-2">🔒</span>
                   安定性抜群！
                 </h4>
                 <p className="text-gray-600 leading-relaxed">
@@ -67,6 +69,7 @@ const Recruitment = () => {
               >
                 <h4 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
                   <span className="text-yellow-500 mr-3">03</span>
+                  <span className="text-2xl mr-2">💰</span>
                   稼げる仕組み
                 </h4>
                 <p className="text-gray-600 leading-relaxed">
@@ -271,12 +274,12 @@ const Recruitment = () => {
               お電話またはメールフォームよりお気軽にお問い合わせください
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-6 items-center">
-              <div className="bg-white px-8 py-4 rounded-xl shadow-lg">
-                <p className="font-bold text-gray-600">お電話でのお問い合わせ</p>
-                <a href="tel:0336594551" className="text-2xl font-bold text-yellow-600 hover:text-yellow-700">
-                  03-3659-4551
-                </a>
-              </div>
+              <a href="tel:08054748885" className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                <span>採用担当者：西原（TEL：080-5474-8885）</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </a>
               
               <a href="/contact" className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">
                 <span>メールでのお問い合わせはこちら</span>

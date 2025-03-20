@@ -4,29 +4,9 @@ const About = () => {
   return (
     <div className="px-4 py-8 bg-green-50 rounded-b-lg">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-center text-green-800 mb-3">企業理念とビジョン</h2>
-          <p className="text-center text-gray-600 text-lg">電気を通じて、より安全で持続可能な社会づくりに貢献します</p>
-        </div>
-        
         {/* 既存のコンテンツ */}
         <div id="company" className="container-width px-4 sm:px-6 lg:px-8 py-8">
           <div className="max-w-4xl mx-auto">
-            {/* ヘッダーセクション */}
-            <div className="mb-12 p-12 rounded-2xl bg-gradient-to-br from-[#2563eb]/5 to-[#2563eb]/10 shadow-xl transform hover:scale-[1.01] transition-all duration-500 border border-[#2563eb]/20">
-              <div className="relative">
-                <h2 className="flex items-center gap-3 text-5xl font-extrabold">
-                  <span className="bg-gradient-to-r from-[#2563eb] to-blue-500 bg-clip-text text-transparent">私たちの歩み</span>
-                </h2>
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#2563eb]/10 rounded-full blur-3xl"></div>
-              </div>
-              <p className="text-gray-600 mt-6 text-lg leading-relaxed font-medium">
-                2003年の創業以来、<span className="text-[#2563eb] font-bold">電気設備の安全</span>を守り続け、<br />
-                <span className="text-[#2563eb] font-bold">確かな技術</span>と<span className="text-[#2563eb] font-bold">信頼</span>で社会に貢献しています。<br />
-                <span className="text-[#2563eb] font-bold">電気インフラの専門家</span>として、安心・安全な暮らしを支えます。
-              </p>
-            </div>
-
             {/* 会社画像 */}
             <div className="relative w-full h-[500px] mb-12 overflow-hidden rounded-xl shadow-2xl group">
               <img
@@ -153,7 +133,7 @@ const About = () => {
               <div className="p-8 rounded-xl bg-gradient-to-br from-white to-[#2563eb]/5 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-[#2563eb]/10">
                 <h3 className="text-xl font-semibold mb-6 flex items-center gap-3 text-[#2563eb] border-b border-[#2563eb]/20 pb-4">
                   <Building size={20} />
-                  主要取引先【グループ会社含む】
+                  主要取引先
                 </h3>
                 <ul className="space-y-4 text-gray-500">
                   <li className="flex items-center gap-3 text-lg md:whitespace-nowrap">
@@ -162,23 +142,27 @@ const About = () => {
                   </li>
                   <li className="flex items-center gap-3 text-lg md:whitespace-nowrap">
                     <div className="w-2 h-2 rounded-full bg-[#2563eb]"></div>
-                    テプコ・ソリューション・アドバンス株式会社
+                    株式会社T-Cruise
                   </li>
                   <li className="flex items-center gap-3 text-lg md:whitespace-nowrap">
                     <div className="w-2 h-2 rounded-full bg-[#2563eb]"></div>
-                    セコム株式会社
+                    株式会社THREET
                   </li>
                   <li className="flex items-center gap-3 text-lg md:whitespace-nowrap">
                     <div className="w-2 h-2 rounded-full bg-[#2563eb]"></div>
-                    東電タウンプランニング株式会社
+                    樹電工株式会社
                   </li>
                   <li className="flex items-center gap-3 text-lg md:whitespace-nowrap">
                     <div className="w-2 h-2 rounded-full bg-[#2563eb]"></div>
-                    東京エナジーアライアンス株式会社
+                    千葉電工業株式会社
                   </li>
                   <li className="flex items-center gap-3 text-lg md:whitespace-nowrap">
                     <div className="w-2 h-2 rounded-full bg-[#2563eb]"></div>
-                    テプコホームテック株式会社
+                    テックジャパンエンジニアリング株式会社
+                  </li>
+                  <li className="flex items-center gap-3 text-lg md:whitespace-nowrap">
+                    <div className="w-2 h-2 rounded-full bg-[#2563eb]"></div>
+                    上田設備
                   </li>
                 </ul>
               </div>
