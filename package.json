@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npx ts-node copy-images.ts",
-    "build:dev": "vite build --mode development && npx ts-node copy-images.ts",
+    "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "copy-images": "node scripts/copy-images.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

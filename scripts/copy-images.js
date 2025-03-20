@@ -3,7 +3,7 @@ import path from 'path';
 import { globSync } from 'glob';
 
 // 画像ファイルをコピーする関数
-function copyDir(src: string, dest: string): void {
+function copyDir(src, dest) {
   // ディレクトリが存在しない場合は作成
   if (!fs.existsSync(dest)) {
     fs.mkdirSync(dest, { recursive: true });
@@ -32,7 +32,7 @@ function copyDir(src: string, dest: string): void {
 }
 
 // 特定のファイルパターンをコピーする関数
-function copyPatterns(patterns: string[], destDir: string): void {
+function copyPatterns(patterns, destDir) {
   for (const pattern of patterns) {
     try {
       const files = globSync(pattern);
@@ -55,7 +55,7 @@ function copyPatterns(patterns: string[], destDir: string): void {
 }
 
 // メイン処理
-function main(): void {
+function main() {
   try {
     console.log('Copying images from public/images to dist/images...');
     
