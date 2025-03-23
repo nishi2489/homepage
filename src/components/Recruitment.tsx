@@ -25,7 +25,7 @@ const Recruitment = () => {
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-center text-yellow-800 mb-3">採用情報</h2>
-          <p className="text-center text-gray-600 text-lg">私たちと一緒に、社会インフラの未来を創っていきませんか</p>
+          <p className="text-left text-gray-600 text-lg">私たちと一緒に、社会インフラの未来を創っていきませんか</p>
         </div>
         
         <div className="space-y-12">

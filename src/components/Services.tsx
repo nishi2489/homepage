@@ -2,6 +2,7 @@ import { CheckCircle2, Shield, Flame, Wrench, ClipboardCheck, Gauge } from "luci
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { FastForward, BatteryCharging, BarChart } from "lucide-react";
 
 const ServiceCard = ({ icon: Icon, title, description, items, bgImage }) => {
   return (
@@ -101,15 +102,12 @@ const Services = () => {
     }
   ];
 
-  const [showProcedure, setShowProcedure] = useState(false);
-  const [selectedStep, setSelectedStep] = useState(1);
-
   return (
     <div className="px-4 py-8 bg-blue-50 rounded-b-lg">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-center text-blue-800 mb-3">事業情報</h2>
-          <p className="text-center text-gray-600 text-lg">電力会社から委託を受け、一般家庭の電気メーターを計量法に基づき定期的に交換する業務を行っています</p>
+          <p className="text-left text-gray-600 text-lg">電力会社から委託を受け、一般家庭の電気メーターを計量法に基づき定期的に交換する業務を行っています</p>
         </div>
         
         <motion.h2 
@@ -370,7 +368,7 @@ const Services = () => {
                       新しいメーターは、今後10年間安全にご使用いただけます。
                     </p>
                   </div>
-                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                </div>
               </div>
             </div>
           </motion.div>

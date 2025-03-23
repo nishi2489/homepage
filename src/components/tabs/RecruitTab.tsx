@@ -30,7 +30,7 @@ export const RecruitTab = () => {
             <Users className="h-8 w-8" />
             採用情報
           </CardTitle>
-          <CardDescription className="text-blue-100 text-lg">
+          <CardDescription className="text-blue-100 text-lg text-left">
             私たちと一緒に、社会インフラの未来を創っていきませんか
           </CardDescription>
         </CardHeader>

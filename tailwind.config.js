@@ -10,6 +10,9 @@ module.exports = {
       textShadow: {
         'lg': '2px 2px 4px rgba(0, 0, 0, 0.5)',
       },
+      colors: {
+        primary: '#2563eb', // ブルー
+      },
     },
   },
   plugins: [

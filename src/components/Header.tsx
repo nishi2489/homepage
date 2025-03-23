@@ -43,39 +43,6 @@ const Header = ({ onTabChange }: HeaderProps) => {
     setIsOpen(!isOpen);
   };
 
-  const headerStyle = {
-    position: 'relative',
-    width: '100%',
-    height: '100vh',
-    // ... 既存のコード ...
-  } as const;
-
-  const textContainerStyle = {
-    position: 'absolute',
-    top: '50%',
-    // PCの場合は中央寄せ、モバイルの場合は左寄せにする
-    '@media (min-width: 768px)': {
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      textAlign: 'center' as const,
-    },
-    '@media (max-width: 767px)': {
-      left: '20px', // 左端からの余白
-      transform: 'translateY(-50%)',
-      textAlign: 'left' as const,
-    },
-    color: 'white',
-    '& h2': {  // 作業手順の項目のスタイル
-      fontSize: '2rem',  // PCでは32px相当
-      fontWeight: 'bold',
-      marginBottom: '1rem',
-      '@media (max-width: 767px)': {
-        fontSize: '1.5rem',  // モバイルでは24px相当
-      }
-    }
-    // ... 既存のコード ...
-  } as const;
-
   return (
     <header className="fixed top-0 left-0 w-full bg-black shadow-md z-50">
       <div className="container mx-auto px-4">
