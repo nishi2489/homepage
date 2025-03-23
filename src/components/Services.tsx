@@ -107,7 +107,7 @@ const Services = () => {
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-center text-blue-800 mb-3">事業情報</h2>
-          <p className="text-left text-gray-600 text-lg">電力会社から委託を受け、一般家庭の電気メーターを計量法に基づき定期的に交換する業務を行っています</p>
+          <p className="text-left md:text-center text-gray-600 text-lg">電力会社から委託を受け、一般家庭の電気メーターを計量法に基づき定期的に交換する業務を行っています</p>
         </div>
         
         <motion.h2 

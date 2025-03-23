@@ -11,7 +11,9 @@ export const AchievementsTab = () => (
           <Users className="h-6 w-6" />
           採用情報
         </CardTitle>
-        <CardDescription className="text-left">私たちと一緒に、社会インフラの未来を創っていきませんか</CardDescription>
+        <CardDescription className="text-blue-100 text-lg text-left md:text-center">
+          私たちと一緒に、社会インフラの未来を創っていきませんか
+        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="grid grid-cols-1 gap-4">

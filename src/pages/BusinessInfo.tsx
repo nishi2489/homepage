@@ -10,7 +10,7 @@ const BusinessInfo = () => {
       <Header />
       <div className="pt-[100px] pb-[60px]">
         <div className="max-w-5xl mx-auto px-4">
-          <h1 className="text-3xl font-bold mb-8 text-center">事業情報</h1>
+          <h1 className="text-3xl font-bold mb-8 text-left md:text-center">事業情報</h1>
           <ServicesTab />
           <div className="mt-12">
             <Services />
