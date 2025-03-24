@@ -22,6 +22,10 @@ export const ServicesTab = () => {
         <Card className="overflow-hidden shadow-md hover:shadow-xl transition-shadow">
           <CardContent className="p-0">
             <div className="relative">
+              {/*
+                モバイルでは幅を小さく、PCでは従来通り自動調整
+                => w-full h-auto でOK（PCでもレイアウト崩れが起きにくい）
+              */}
               <img
                 src="/images/keiki.jpg"
                 alt="電気設備サービス"

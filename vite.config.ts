@@ -6,15 +6,10 @@ import { copyFileSync, existsSync, mkdirSync } from 'fs';
 import { resolve } from 'path';
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    port: 3000,
-    host: true,
-    open: false,
-  },
+export default defineConfig({
   plugins: [
     react(),
-    mode === 'development' && componentTagger(),
+    process.env.NODE_ENV === 'development' && componentTagger(),
     {
       name: 'copy-images',
       closeBundle() {
@@ -38,6 +33,15 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    host: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      }
+    }
+  },
   build: {
     assetsInlineLimit: 0,
     emptyOutDir: true,
@@ -56,4 +60,4 @@ export default defineConfig(({ mode }) => ({
     }
   },
   publicDir: 'public',
-}));
+});

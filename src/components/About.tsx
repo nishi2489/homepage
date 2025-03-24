@@ -8,11 +8,44 @@ const About = () => {
         <div id="company" className="container-width px-4 sm:px-6 lg:px-8 py-8">
           <div className="max-w-4xl mx-auto">
             {/* 会社画像 */}
-            <div className="relative w-full h-[500px] mb-12 overflow-hidden rounded-xl shadow-2xl group">
+            {/*
+              ▼ここでモバイル時とPC時で高さや表示方法を切り替える
+              モバイル : h-auto + object-contain => 全体が見える
+              PC (md以上): h-[500px] + object-cover => 既存の大きな横幅表示
+            */}
+            <div
+              className="
+                relative
+                w-full
+                h-auto md:h-[500px]    /* モバイル:高さ自動, PC:高さ500px */
+                mb-12
+                overflow-hidden
+                rounded-xl
+                shadow-2xl
+                group
+              "
+            >
               <img
                 src="/images/company-image.jpg"
                 alt="会社外観"
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                className="
+                  w-full
+                  h-auto
+                  /* モバイル時: 最大でも画面の80%程度までにして全体表示 */
+                  max-h-[80vh] 
+                  object-contain
+
+                  /* PC以上 (md:～) では既存のカバー表示に戻す */
+                  md:max-h-none
+                  md:object-cover
+                  md:w-full
+                  md:h-full
+
+                  transform
+                  group-hover:scale-105
+                  transition-transform
+                  duration-700
+                "
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2563eb]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>

@@ -7,16 +7,15 @@ def copy_files_contents():
     
     # 検索対象のファイル名リスト
     target_files = [
-        "Company.tsx",
         "Services.module.css",
         "Header.tsx",
         "Hero.tsx",
         "Recruitment.tsx",
-        "Service.tsx",
         "ServicesTab.tsx",
+        "ContactForm.tsx",
+        "route.ts",
         "RecruitTab.tsx",
-        "Services.tsx",
-    ]
+        ]
     
     try:
         # 見つかったファイルの中身を連結するためのリスト

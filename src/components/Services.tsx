@@ -107,7 +107,9 @@ const Services = () => {
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-center text-blue-800 mb-3">事業情報</h2>
-          <p className="text-left md:text-center text-gray-600 text-lg">電力会社から委託を受け、一般家庭の電気メーターを計量法に基づき定期的に交換する業務を行っています</p>
+          <p className="text-left md:text-center text-gray-600 text-lg">
+            電力会社から委託を受け、一般家庭の電気メーターを計量法に基づき定期的に交換する業務を行っています
+          </p>
         </div>
         
         <motion.h2 
@@ -161,15 +163,41 @@ const Services = () => {
 
               {/* 画像セクション */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                {/* -- 1枚目 -- */}
                 <motion.div 
                   whileHover={{ scale: 1.02 }}
-                  className="relative h-80 md:h-[500px] rounded-xl overflow-hidden shadow-lg group"
+                  className="
+                    relative 
+                    md:h-[500px]   /* PC時は高さ500px固定 */
+                    h-auto         /* モバイルでは自動高さ */
+                    rounded-xl 
+                    overflow-hidden 
+                    shadow-lg 
+                    group
+                  "
                 >
                   <img
                     src="/images/keikitumi3.jpg"
                     alt="メーター工事作業員"
-                    className="w-[80%] h-[80%] object-cover transform transition-transform duration-500 group-hover:scale-110 mx-auto my-auto"
-                    style={{ objectPosition: '50% 10%' }}
+                    className="
+                      mx-auto my-auto 
+                      transform 
+                      transition-transform 
+                      duration-500 
+                      group-hover:scale-110
+
+                      /* ▼モバイルで全体表示: w-full + h-auto + object-contain + 高さ制限 */
+                      w-full 
+                      h-auto 
+                      max-h-[80vh]
+                      object-contain
+
+                      /* ▼PC時のみ従来通り: w-[80%] h-[80%] object-cover (高さ制限解除) */
+                      md:w-[80%] 
+                      md:h-[80%] 
+                      md:object-cover 
+                      md:max-h-none
+                    "
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-6 left-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -178,19 +206,135 @@ const Services = () => {
                     </div>
                   </div>
                 </motion.div>
+
+                {/* -- 2枚目 -- */}
                 <motion.div 
                   whileHover={{ scale: 1.02 }}
-                  className="relative h-80 md:h-[500px] rounded-xl overflow-hidden shadow-lg group"
+                  className="
+                    relative 
+                    md:h-[500px] 
+                    h-auto
+                    rounded-xl 
+                    overflow-hidden 
+                    shadow-lg 
+                    group
+                  "
                 >
                   <img
                     src="/images/souko.jpg"
                     alt="メーター保管倉庫"
-                    className="w-[80%] h-[80%] object-cover transform transition-transform duration-500 group-hover:scale-110 mx-auto my-auto"
+                    className="
+                      mx-auto my-auto
+                      transform 
+                      transition-transform 
+                      duration-500 
+                      group-hover:scale-110
+
+                      /* ▼モバイル用: 全体表示 */
+                      w-full 
+                      h-auto 
+                      max-h-[80vh] 
+                      object-contain
+
+                      /* ▼PC時のみ従来通り */
+                      md:w-[80%] 
+                      md:h-[80%] 
+                      md:object-cover 
+                      md:max-h-none
+                    "
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-6 left-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                       <h4 className="text-2xl font-bold mb-2">メーター保管設備</h4>
                       <p className="text-lg">適切な管理と保管体制</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* -- 3枚目 -- */}
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="
+                    relative 
+                    md:h-[500px] 
+                    h-auto
+                    rounded-xl 
+                    overflow-hidden 
+                    shadow-lg 
+                    group
+                  "
+                >
+                  <img
+                    src="/images/misato1.jpg"
+                    alt="メーター工事現場"
+                    className="
+                      mx-auto my-auto
+                      transform 
+                      transition-transform 
+                      duration-500 
+                      group-hover:scale-110
+
+                      /* ▼モバイル用: 全体表示 */
+                      w-full 
+                      h-auto 
+                      max-h-[80vh] 
+                      object-contain
+
+                      /* ▼PC時のみ従来通り */
+                      md:w-[80%] 
+                      md:h-[80%] 
+                      md:object-cover 
+                      md:max-h-none
+                    "
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-6 left-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <h4 className="text-2xl font-bold mb-2">物流拠点</h4>
+                      <p className="text-lg">整理された保管システムで品質管理</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* -- 4枚目 -- */}
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="
+                    relative 
+                    md:h-[500px] 
+                    h-auto
+                    rounded-xl 
+                    overflow-hidden 
+                    shadow-lg 
+                    group
+                  "
+                >
+                  <img
+                    src="/images/misato2.jpg"
+                    alt="メーター交換作業"
+                    className="
+                      mx-auto my-auto
+                      transform 
+                      transition-transform 
+                      duration-500 
+                      group-hover:scale-110
+
+                      /* ▼モバイル用: 全体表示 */
+                      w-full 
+                      h-auto 
+                      max-h-[80vh] 
+                      object-contain
+
+                      /* ▼PC時のみ従来通り */
+                      md:w-[80%] 
+                      md:h-[80%] 
+                      md:object-cover 
+                      md:max-h-none
+                    "
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-6 left-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <h4 className="text-2xl font-bold mb-2">研修室</h4>
+                      <p className="text-lg">技術と知識を共に学ぶ交流の場</p>
                     </div>
                   </div>
                 </motion.div>
@@ -272,7 +416,7 @@ const Services = () => {
 
               {/* 手順説明セクション */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* ステップ1: 作業のお知らせ */}
+                {/* ステップ1 */}
                 <div className="bg-gradient-to-br from-white to-[#2563eb]/5 rounded-lg p-6 shadow-md border border-[#2563eb]/10">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="flex items-center justify-center w-10 h-10 bg-[#2563eb] text-white rounded-full font-bold">1</span>
@@ -296,7 +440,7 @@ const Services = () => {
                   </div>
                 </div>
 
-                {/* ステップ2: ご挨拶 */}
+                {/* ステップ2 */}
                 <div className="bg-gradient-to-br from-white to-[#2563eb]/5 rounded-lg p-6 shadow-md border border-[#2563eb]/10">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="flex items-center justify-center w-10 h-10 bg-[#2563eb] text-white rounded-full font-bold">2</span>
@@ -320,7 +464,7 @@ const Services = () => {
                   </div>
                 </div>
 
-                {/* ステップ3: 作業内容 */}
+                {/* ステップ3 */}
                 <div className="bg-gradient-to-br from-white to-[#2563eb]/5 rounded-lg p-6 shadow-md border border-[#2563eb]/10">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="flex items-center justify-center w-10 h-10 bg-[#2563eb] text-white rounded-full font-bold">3</span>
@@ -346,7 +490,7 @@ const Services = () => {
                   </div>
                 </div>
 
-                {/* ステップ4: 作業終了後のお知らせ */}
+                {/* ステップ4 */}
                 <div className="bg-gradient-to-br from-white to-[#2563eb]/5 rounded-lg p-6 shadow-md border border-[#2563eb]/10">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="flex items-center justify-center w-10 h-10 bg-[#2563eb] text-white rounded-full font-bold">4</span>
@@ -399,7 +543,10 @@ const Services = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative overflow-hidden rounded-xl shadow-lg group bg-white"
               >
-                <div className="absolute inset-0 bg-cover bg-center z-0 opacity-100" style={{ backgroundImage: `url(${service.bgImage})` }} />
+                <div
+                  className="absolute inset-0 bg-cover bg-center z-0 opacity-100"
+                  style={{ backgroundImage: `url(${service.bgImage})` }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/60 to-white/60 z-10" />
                 <div className="relative z-20 p-8">
                   <div className="flex items-center gap-4 mb-6 bg-white/80 p-3 rounded-xl shadow-sm">
@@ -417,12 +564,25 @@ const Services = () => {
                         <li key={itemIndex} className="flex items-start gap-3">
                           <span className="flex-shrink-0 mt-1">
                             <div className="bg-cyan-100 rounded-full p-1">
-                              <svg className="w-4 h-4 text-cyan-700" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              <svg 
+                                className="w-4 h-4 text-cyan-700" 
+                                viewBox="0 0 16 16" 
+                                fill="none" 
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.3334 4L6.00008 11.3333L2.66675 8"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
                               </svg>
                             </div>
                           </span>
-                          <span className="text-cyan-900 font-medium leading-relaxed">{item}</span>
+                          <span className="text-cyan-900 font-medium leading-relaxed">
+                            {item}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -430,7 +590,11 @@ const Services = () => {
                 </div>
                 <style jsx>{`
                   .glass-card {
-                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+                    background: linear-gradient(
+                      135deg,
+                      rgba(255, 255, 255, 0.8),
+                      rgba(255, 255, 255, 0.6)
+                    );
                     backdrop-filter: blur(4px);
                     border: 1px solid rgba(255, 255, 255, 0.3);
                     border-radius: 1rem;
