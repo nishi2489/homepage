@@ -58,10 +58,10 @@ const Header = ({ onTabChange }: HeaderProps) => {
           
           {/* デスクトップナビゲーション */}
           <nav className="hidden md:flex space-x-8">
-            <a href="/#services" onClick={(e) => { e.preventDefault(); handleNavClick("services"); }} className="text-white hover:text-white/80 transition-colors">事業情報</a>
-            <a href="/#company" onClick={(e) => { e.preventDefault(); handleNavClick("company"); }} className="text-white hover:text-white/80 transition-colors">企業情報</a>
-            <a href="/#recruit" onClick={(e) => { e.preventDefault(); handleNavClick("recruit"); }} className="text-white hover:text-white/80 transition-colors">採用情報</a>
-            <Link to="/contact" className="text-white hover:text-white/80 transition-colors flex items-center">
+            <a href="/#services" onClick={(e) => { e.preventDefault(); handleNavClick("services"); }} className="text-xl text-white hover:text-white/80 transition-colors font-bold drop-shadow-lg" style={{ fontFamily: "'Noto Serif JP', serif" }}>事業情報</a>
+            <a href="/#company" onClick={(e) => { e.preventDefault(); handleNavClick("company"); }} className="text-xl text-white hover:text-white/80 transition-colors font-bold drop-shadow-lg" style={{ fontFamily: "'Noto Serif JP', serif" }}>企業情報</a>
+            <a href="/#recruit" onClick={(e) => { e.preventDefault(); handleNavClick("recruit"); }} className="text-xl text-white hover:text-white/80 transition-colors font-bold drop-shadow-lg" style={{ fontFamily: "'Noto Serif JP', serif" }}>採用情報</a>
+            <Link to="/contact" className="text-xl text-white hover:text-white/80 transition-colors font-bold drop-shadow-lg flex items-center" style={{ fontFamily: "'Noto Serif JP', serif" }}>
               <Mail size={18} className="mr-1" />
               お問い合わせ
             </Link>
@@ -73,10 +73,10 @@ const Header = ({ onTabChange }: HeaderProps) => {
       {isOpen && (
         <div className="md:hidden bg-black py-4 px-4 shadow-lg">
           <nav className="flex flex-col space-y-4">
-            <a href="/#services" onClick={(e) => { e.preventDefault(); handleNavClick("services"); }} className="text-white hover:text-white/80 transition-colors py-2">事業情報</a>
-            <a href="/#company" onClick={(e) => { e.preventDefault(); handleNavClick("company"); }} className="text-white hover:text-white/80 transition-colors py-2">企業情報</a>
-            <a href="/#recruit" onClick={(e) => { e.preventDefault(); handleNavClick("recruit"); }} className="text-white hover:text-white/80 transition-colors py-2">採用情報</a>
-            <Link to="/contact" className="text-white hover:text-white/80 transition-colors py-2 flex items-center" onClick={toggleMenu}>
+            <a href="/#services" onClick={(e) => { e.preventDefault(); handleNavClick("services"); }} className="text-xl text-white hover:text-white/80 transition-colors py-2 font-bold drop-shadow-lg" style={{ fontFamily: "'Noto Serif JP', serif" }}>事業情報</a>
+            <a href="/#company" onClick={(e) => { e.preventDefault(); handleNavClick("company"); }} className="text-xl text-white hover:text-white/80 transition-colors py-2 font-bold drop-shadow-lg" style={{ fontFamily: "'Noto Serif JP', serif" }}>企業情報</a>
+            <a href="/#recruit" onClick={(e) => { e.preventDefault(); handleNavClick("recruit"); }} className="text-xl text-white hover:text-white/80 transition-colors py-2 font-bold drop-shadow-lg" style={{ fontFamily: "'Noto Serif JP', serif" }}>採用情報</a>
+            <Link to="/contact" className="text-xl text-white hover:text-white/80 transition-colors py-2 font-bold drop-shadow-lg flex items-center" onClick={toggleMenu} style={{ fontFamily: "'Noto Serif JP', serif" }}>
               <Mail size={18} className="mr-1" />
               お問い合わせ
             </Link>

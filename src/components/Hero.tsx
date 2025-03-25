@@ -23,14 +23,14 @@ const Hero = () => {
           className="
             relative 
             w-full h-full 
-            flex items-center 
-            justify-start        /* ←モバイル: 左寄せ */
-            md:justify-center    /* ←md以上: 中央寄せ */
-            px-6 sm:px-8
+            flex
+            items-center       /* ←縦方向中央寄せ */
+            justify-center     /* ←横方向中央寄せ */
+            px-0
           "
         >
           {/* ここがポイント：モバイルで text-left、md以上で text-center */}
-          <div className="max-w-4xl text-left md:text-center">
+          <div className="w-full text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-4 z-10">
               <div>安全な電気設備で</div>
               <div>安心な暮らしを守る</div>

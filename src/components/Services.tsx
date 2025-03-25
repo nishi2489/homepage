@@ -1,3 +1,5 @@
+// pages/Services.jsx
+
 import { CheckCircle2, Shield, Flame, Wrench, ClipboardCheck, Gauge } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -341,16 +343,45 @@ const Services = () => {
               </div>
 
               {/* 必要資格 */}
-              <div className="bg-gradient-to-r from-[#2563eb]/5 to-[#2563eb]/10 p-8 rounded-xl mb-8 border border-[#2563eb]/20">
+              <div className="
+                bg-gradient-to-r from-[#2563eb]/5 to-[#2563eb]/10
+                p-8 rounded-xl mb-8 border border-[#2563eb]/20
+                -mx-4      /* モバイル時に横幅を端まで */
+                sm:mx-0    /* sm以上は余白に戻す */
+              ">
                 <h4 className="text-2xl md:text-3xl font-bold mb-4 text-[#2563eb]">【必要資格】</h4>
                 <p className="text-lg md:text-xl leading-relaxed text-gray-700">
                   社内外の研修課程を修了し、適性検査により合格者として認定を受けた者
                 </p>
               </div>
 
-              {/* お客様へのお知らせ */}
-              <div className="bg-gradient-to-r from-[#2563eb]/5 to-[#2563eb]/10 p-8 rounded-xl mb-8 border border-[#2563eb]/20">
-                <h4 className="text-2xl md:text-3xl font-bold mb-6 text-[#2563eb]">【お客様へのお知らせ】</h4>
+              {/* お客様へのお知らせ（ここをモバイル時に左右いっぱいに） */}
+              <div
+                className="
+                  bg-gradient-to-r from-[#2563eb]/5 to-[#2563eb]/10
+                  p-8
+                  rounded-xl
+                  mb-8
+                  border
+                  border-[#2563eb]/20
+                  -mx-4     /* モバイル時に両端まで広げる */
+                  sm:mx-0   /* 640px以上で元に戻す */
+                "
+              >
+                <h4
+  // モバイル時は text-xl
+  // sm 以上で text-2xl
+  // md 以上で text-3xl
+  className="
+    text-xl
+    sm:text-2xl
+    md:text-3xl
+    font-bold
+    mb-6
+    text-[#2563eb]
+  "
+>
+                  【お客様へのお知らせ】</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-white/80 p-4 rounded-xl shadow-sm">
@@ -415,7 +446,11 @@ const Services = () => {
               </div>
 
               {/* 手順説明セクション */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="
+                 grid grid-cols-1 md:grid-cols-2 gap-8
+                 -mx-4     /* モバイル幅で左右端いっぱいに */
+                 sm:mx-0   /* 640px以上では余白を戻す */
+                ">
                 {/* ステップ1 */}
                 <div className="bg-gradient-to-br from-white to-[#2563eb]/5 rounded-lg p-6 shadow-md border border-[#2563eb]/10">
                   <div className="flex items-center gap-4 mb-4">
