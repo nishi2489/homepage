@@ -1,12 +1,27 @@
+"use client"; // Next.js (App Router) でクライアント側の処理を行う場合は必須
+
+import { Link } from "react-router-dom";
+
 const Footer = () => {
-  const handleNavClick = (hash: string) => {
+  // ヘッダーと同様のロジックを用意
+  const handleNavClick = (tab: "services" | "company" | "recruit") => {
     // 現在のパスがルートでない場合は、ハッシュ付きのルートパスに移動
     if (window.location.pathname !== '/') {
-      window.location.href = `/#${hash}`;
+      window.location.href = `/#${tab}`;
       return;
     }
-    // ルートパスにいる場合は従来の動作
-    window.location.hash = `#${hash}`;
+    // ルートパスにいる場合は hash をセットし、スムーススクロール
+    window.location.hash = `#${tab}`;
+
+    // 目的のセクションIDに合わせてスクロール
+    const sectionId =
+      tab === "services" ? "service-section" :
+      tab === "company"  ? "company-section" :
+                           "recruit-section";
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -47,13 +62,14 @@ const Footer = () => {
                   採用情報
                 </button>
               </li>
+              {/* ヘッダーと同じくお問い合わせは直接 /contact へ */}
               <li>
-                <button
-                  onClick={() => window.location.href = '/contact'}
+                <Link
+                  to="/contact"
                   className="text-white/90 hover:text-white flex items-center gap-2"
                 >
                   お問い合わせはこちら
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

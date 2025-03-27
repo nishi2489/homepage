@@ -6,12 +6,13 @@ const About = () => {
       <div className="max-w-6xl mx-auto">
 
         {/* ＝＝＝＝＝＝ 背景上のタイトルと本文 ＝＝＝＝＝＝ */}
-        <div className="mb-12 text-center">
-          {/* ここではテキストを緑系に変更 */}
-          <h2 className="text-2xl sm:text-3xl text-green-600 font-bold mb-4">
+        <div className="mb-12">
+          {/* 「企業情報」見出しは中央揃え */}
+          <h2 className="text-2xl sm:text-3xl text-green-600 font-bold mb-4 text-center">
             企業情報
           </h2>
-          <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+          {/* 残りの文章は左揃え */}
+          <p className="text-gray-700 text-lg sm:text-xl leading-relaxed text-left">
             安全と信頼を第一に、社会インフラの維持に貢献しています。
             <br className="hidden sm:block" />
             電気設備の安全を守る専門家集団として、
@@ -53,14 +54,11 @@ const About = () => {
                   duration-700
                 "
               />
-              {/* ここも青系 → 緑系に変更 */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#15803d]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
 
             <div className="space-y-8">
-
               {/* 社名 */}
-              {/* 背景や境界線・文字色を青系(#2563eb)→緑系(#15803d)へ */}
               <div className="p-8 rounded-xl bg-gradient-to-br from-white to-[#15803d]/5 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-[#15803d]/10">
                 <h3 className="text-xl font-semibold mb-6 flex items-center gap-3 text-[#15803d] border-b border-[#15803d]/20 pb-4">
                   <Building2 className="w-6 h-6" />
